@@ -6,7 +6,7 @@
 class GamePlay : public QWidget
 {
 public:
-    GamePlay(QWidget *parent);
+    GamePlay(QWidget* parent);
 };
 
 #endif // GAMEPLAY_H

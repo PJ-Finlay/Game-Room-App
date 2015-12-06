@@ -7,7 +7,7 @@ class GameChooser : public QWidget
 {
     Q_OBJECT
 public:
-    GameChooser(QWidget *parent = 0);
+    GameChooser(QWidget* parent = 0);
 
 signals:
     void gameChosen();
