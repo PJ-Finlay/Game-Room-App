@@ -9,33 +9,28 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
 {
     //layout is the layout for the MainView
     layout = new QVBoxLayout();
-    this->setLayout(layout);
 
-    //Creates the initial layout which is GameChooser
-    QVBoxLayout *gameChooserLayout = new QVBoxLayout();
-    GameChooser *gameChooser = new GameChooser();
-    gameChooserLayout->addWidget(gameChooser);
+    //Creates the initial view which is GameChooser
+    GameChooser* gameChooser = new GameChooser();
 
     //Connects The gameChosen signal in gameChooser to MainView's openGame slot
     QObject::connect(gameChooser, SIGNAL(gameChosen()),this, SLOT(openGame()));
 
-    //Makes gameChooserLayout the layout that is being viewed
-    layout->addLayout(gameChooserLayout);
-    currentLayout = gameChooserLayout;
+    //Makes gameChooser the widget that is being viewed
+    layout->addWidget(gameChooser);
+    currentWidget = gameChooser;
 
-    //layout->removeItem(gameChooserLayout);
-
+    //Set layout as the layout for the MainView (This is at the end of the constructor so that the layout is completely constructed before it is displayed
+    this->setLayout(layout);
 }
 
 void MainView::openGame(){
     //Create the game layout
-    QVBoxLayout *gameLayout = new QVBoxLayout();
-    QPushButton *b = new QPushButton("Game");
-    gameLayout->addWidget(b);
+    QPushButton* b = new QPushButton("Game");
 
     //Reset the layout of the MainView to the game layout
-    layout->removeItem(currentLayout);
-    layout->addLayout(gameLayout);
-    delete currentLayout;
-    currentLayout = gameLayout;
+    layout->removeWidget(currentWidget);
+    layout->addWidget(b);
+    delete currentWidget;
+    currentWidget = b;
 }

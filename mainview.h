@@ -9,8 +9,8 @@ class MainView : public QWidget
     Q_OBJECT
 public:
     explicit MainView(QWidget *parent = 0);
-    QVBoxLayout *layout;
-    QVBoxLayout *currentLayout;
+    QVBoxLayout* layout;
+    QWidget* currentWidget;
 
 
 signals:

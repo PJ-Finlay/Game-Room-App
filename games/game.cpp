@@ -1,7 +1,7 @@
 #include "game.h"
 
-Game::Game()
+Game::Game(QString name)
 {
-
+    this->name = name;
 }
 

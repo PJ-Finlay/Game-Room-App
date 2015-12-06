@@ -16,10 +16,12 @@ SOURCES += main.cpp\
     ui/views/gamechooser.cpp \
     ui/views/gameplay.cpp \
     games/game.cpp \
-    mainview.cpp
+    mainview.cpp \
+    gamelist.cpp
 
 HEADERS  += \
     ui/views/gamechooser.h \
     ui/views/gameplay.h \
     games/game.h \
-    mainview.h
+    mainview.h \
+    gamelist.h
