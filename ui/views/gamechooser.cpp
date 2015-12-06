@@ -1,10 +1,22 @@
 #include "gamechooser.h"
 
+#include <QObject>
+#include <QVBoxLayout>
 #include <QPushButton>
 
-GameChooser::GameChooser(QWidget *parent) : View(parent)
+GameChooser::GameChooser(QWidget *parent) : QWidget(parent)
 {
-    QPushButton *b = new QPushButton("Game Chooser",this);
-    b->show();
+    QVBoxLayout *layout = new QVBoxLayout();
+
+    QPushButton *b = new QPushButton("Chess",this);
+    layout->addWidget(b);
+    QObject::connect(b,SIGNAL(clicked()),this,SLOT(selectGame()));
+
+    this->setLayout(layout);
+
+    emit gameChosen();
+}
+void GameChooser::selectGame(){
+    emit gameChosen();
 }
 

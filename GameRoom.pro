@@ -13,14 +13,13 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        uiwidget.cpp \
-    ui/views/view.cpp \
     ui/views/gamechooser.cpp \
     ui/views/gameplay.cpp \
-    games/game.cpp
+    games/game.cpp \
+    mainview.cpp
 
-HEADERS  += uiwidget.h \
-    ui/views/view.h \
+HEADERS  += \
     ui/views/gamechooser.h \
     ui/views/gameplay.h \
-    games/game.h
+    games/game.h \
+    mainview.h

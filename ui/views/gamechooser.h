@@ -1,12 +1,19 @@
 #ifndef GAMECHOOSER_H
 #define GAMECHOOSER_H
 
-#include "view.h"
+#include <QWidget>
 
-class GameChooser : public View
+class GameChooser : public QWidget
 {
+    Q_OBJECT
 public:
-    GameChooser(QWidget *parent);
+    GameChooser(QWidget *parent = 0);
+
+signals:
+    void gameChosen();
+
+public slots:
+    void selectGame();
 };
 
 #endif // GAMECHOOSER_H
