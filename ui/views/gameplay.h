@@ -1,9 +1,9 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 
-#include "view.h"
+#include <QWidget>
 
-class GamePlay : public View
+class GamePlay : public QWidget
 {
 public:
     GamePlay(QWidget *parent);
