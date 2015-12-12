@@ -6,8 +6,13 @@
 class Game
 {
 public:
-    Game(QString name);
+    Game();
+    QString getName();
+    void setName(QString name);
+
+private:
     QString name;
+
 };
 
 #endif // GAME_H

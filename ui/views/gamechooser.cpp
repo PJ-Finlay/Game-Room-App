@@ -20,7 +20,7 @@ GameChooser::GameChooser(QWidget *parent) : QWidget(parent)
     //Loop through list and add each game to page
     for (int i = 0; i < list->size(); i++) {
         Game game = list->at(i);
-        QString name = game.name;
+        QString name = game.getName();
         QPushButton* button = new QPushButton(name,this);
         layout->addWidget(button);
 
@@ -31,6 +31,7 @@ GameChooser::GameChooser(QWidget *parent) : QWidget(parent)
     //Set layout of GameChooser
     this->setLayout(layout);
 }
+
 void GameChooser::selectGame(){
     emit gameChosen();
 }
