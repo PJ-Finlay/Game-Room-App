@@ -17,11 +17,13 @@ SOURCES += main.cpp\
     ui/views/gameplay.cpp \
     games/game.cpp \
     mainview.cpp \
-    gamelist.cpp
+    gamelist.cpp \
+    games/individual_game/tictactoe.cpp
 
 HEADERS  += \
     ui/views/gamechooser.h \
     ui/views/gameplay.h \
     games/game.h \
     mainview.h \
-    gamelist.h
+    gamelist.h \
+    games/individual_game/tictactoe.h

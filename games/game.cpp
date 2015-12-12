@@ -1,7 +1,14 @@
 #include "game.h"
 
-Game::Game(QString name)
+Game::Game()
 {
-    this->name = name;
+    this->setName("Game Name");
 }
 
+QString Game::getName(){
+    return this->name;
+}
+
+void Game::setName(QString name){
+    this->name = name;
+}
