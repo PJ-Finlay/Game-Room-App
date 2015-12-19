@@ -1,5 +1,7 @@
 #include "game.h"
 
+#include <QPushButton>
+
 Game::Game()
 {
     this->setName("Game Name");
@@ -11,4 +13,9 @@ QString Game::getName(){
 
 void Game::setName(QString name){
     this->name = name;
+}
+
+QWidget* Game::getGameWidget(){
+    QPushButton* p = new QPushButton();
+    return p;
 }

@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QVBoxLayout>
 
+#include "games/game.h"
+
 class MainView : public QWidget
 {
     Q_OBJECT
@@ -16,7 +18,7 @@ public:
 signals:
 
 public slots:
-    void openGame();
+    void openGame(Game game);
 };
 
 #endif // MAINVIEW_H
