@@ -29,9 +29,21 @@ void MainView::openGame(Game game){
     //Create the game layout
     GamePlay* gameplay = new GamePlay(game,this);
 
-    //Reset the layout of the MainView to the game layout
-    layout->removeWidget(currentWidget);
-    layout->addWidget(gameplay);
-    delete currentWidget;
+    swapViews(gameplay);
     currentWidget = gameplay;
+    QObject::connect(gameplay,SIGNAL(returnToGameChooserClicked()),this,SLOT(openGameChooser()));
+}
+
+void MainView::openGameChooser(){
+    //Create the GameChooser
+    GameChooser* gameChooser = new GameChooser(this);
+    swapViews(gameChooser);
+    QObject::connect(gameChooser, SIGNAL(gameChosen(Game)),this, SLOT(openGame(Game)));
+}
+
+void MainView::swapViews(QWidget *newView){
+    layout->removeWidget(currentWidget);
+    layout->addWidget(newView);
+    delete currentWidget;
+    currentWidget = newView;
 }

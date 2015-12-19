@@ -16,6 +16,6 @@ void Game::setName(QString name){
 }
 
 QWidget* Game::getGameWidget(){
-    QPushButton* p = new QPushButton();
+    QPushButton* p = new QPushButton(getName());
     return p;
 }

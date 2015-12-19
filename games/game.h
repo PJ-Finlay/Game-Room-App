@@ -12,6 +12,7 @@ public:
     void setName(QString name);
     QWidget* getGameWidget();
 
+
 private:
     QString name;
 
