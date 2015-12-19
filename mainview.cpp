@@ -4,6 +4,7 @@
 #include <QVBoxLayout>
 
 #include "ui/views/gamechooser.h"
+#include "ui/views/gameplay.h"
 
 MainView::MainView(QWidget *parent) : QWidget(parent)
 {
@@ -26,11 +27,11 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
 
 void MainView::openGame(Game game){
     //Create the game layout
-    QPushButton* b = new QPushButton(game.getName());
+    GamePlay* gameplay = new GamePlay(game,this);
 
     //Reset the layout of the MainView to the game layout
     layout->removeWidget(currentWidget);
-    layout->addWidget(b);
+    layout->addWidget(gameplay);
     delete currentWidget;
-    currentWidget = b;
+    currentWidget = gameplay;
 }

@@ -3,10 +3,12 @@
 
 #include <QWidget>
 
+#include "games/game.h"
+
 class GamePlay : public QWidget
 {
 public:
-    GamePlay(QWidget* parent);
+    GamePlay(Game game, QWidget* parent);
 };
 
 #endif // GAMEPLAY_H
