@@ -1,6 +1,5 @@
 #include "mainview.h"
 
-#include <QPushButton>
 #include <QVBoxLayout>
 
 #include "ui/views/gamechooser.h"

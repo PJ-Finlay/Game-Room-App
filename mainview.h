@@ -17,8 +17,6 @@ public:
 private:
     void swapViews(QWidget* newView);
 
-signals:
-
 public slots:
     void openGame(Game game);
     void openGameChooser();

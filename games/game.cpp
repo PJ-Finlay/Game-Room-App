@@ -1,10 +1,9 @@
 #include "game.h"
 
-#include <QPushButton>
+#include <QLabel>
 
 Game::Game()
 {
-    this->setName("Game Name");
 }
 
 QString Game::getName(){
@@ -16,6 +15,6 @@ void Game::setName(QString name){
 }
 
 QWidget* Game::getGameWidget(){
-    QPushButton* p = new QPushButton(getName());
+    QLabel* p = new QLabel(getName());
     return p;
 }
