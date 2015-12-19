@@ -11,7 +11,7 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
     layout = new QVBoxLayout();
 
     //Creates the initial view which is GameChooser
-    GameChooser* gameChooser = new GameChooser();
+    GameChooser* gameChooser = new GameChooser(this);
 
     //Connects The gameChosen signal in gameChooser to MainView's openGame slot
     QObject::connect(gameChooser, SIGNAL(gameChosen(Game)),this, SLOT(openGame(Game)));

@@ -9,7 +9,7 @@ class GameChooserButton : public QPushButton
 {
     Q_OBJECT
 public:
-    GameChooserButton(Game game, QWidget* parent = 0);
+    GameChooserButton(Game game, QWidget* parent);
     Game getGame();
 
 private:
