@@ -14,11 +14,14 @@ public:
     QVBoxLayout* layout;
     QWidget* currentWidget;
 
+private:
+    void swapViews(QWidget* newView);
 
 signals:
 
 public slots:
     void openGame(Game game);
+    void openGameChooser();
 };
 
 #endif // MAINVIEW_H

@@ -7,8 +7,15 @@
 
 class GamePlay : public QWidget
 {
+    Q_OBJECT
 public:
     GamePlay(Game game, QWidget* parent);
+
+public slots:
+    void returnToGameChooser();
+
+signals:
+    void returnToGameChooserClicked();
 };
 
 #endif // GAMEPLAY_H
