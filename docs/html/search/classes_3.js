@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tictactoe',['TicTacToe',['../classTicTacToe.html',1,'']]]
+  ['tictactoe',['TicTacToe',['../class_tic_tac_toe.html',1,'']]]
 ];

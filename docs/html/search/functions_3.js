@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['opengame',['openGame',['../classMainView.html#abcf86342e711b00d6b43c1860199e40b',1,'MainView']]]
+  ['returntogamechooserclicked',['returnToGameChooserClicked',['../class_game_play.html#addfba749b068894d616a62e7b6068838',1,'GamePlay']]]
 ];

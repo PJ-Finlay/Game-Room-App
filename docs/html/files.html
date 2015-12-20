@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -72,26 +65,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('files.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,22 +93,22 @@ $(document).ready(function(){initNavTree('files.html','');});
 <tr id="row_0_1_0_" class="even"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><a href="tictactoe_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>tictactoe.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_2_"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><a href="game_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>game.h</b></td><td class="desc"></td></tr>
 <tr id="row_1_" class="even"><td class="entry"><img id="arr_1_" src="ftv2mnode.png" alt="o" width="16" height="22" onclick="toggleFolder('1_')"/><img id="img_1_" src="ftv2folderopen.png" alt="-" width="24" height="22" onclick="toggleFolder('1_')"/><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html" target="_self">ui</a></td><td class="desc"></td></tr>
-<tr id="row_1_0_"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img id="arr_1_0_" src="ftv2mlastnode.png" alt="\" width="16" height="22" onclick="toggleFolder('1_0_')"/><img id="img_1_0_" src="ftv2folderopen.png" alt="-" width="24" height="22" onclick="toggleFolder('1_0_')"/><a class="el" href="dir_c22cbe7cf1ce95a2eca8b51d59d1bcdc.html" target="_self">views</a></td><td class="desc"></td></tr>
-<tr id="row_1_0_0_" class="even"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2blank.png" alt="&#160;" width="16" height="22" /><img src="ftv2node.png" alt="o" width="16" height="22" /><a href="gamechooser_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>gamechooser.h</b></td><td class="desc"></td></tr>
-<tr id="row_1_0_1_"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2blank.png" alt="&#160;" width="16" height="22" /><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><a href="gameplay_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>gameplay.h</b></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><img src="ftv2node.png" alt="o" width="16" height="22" /><a href="gamelist_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>gamelist.h</b></td><td class="desc"></td></tr>
-<tr id="row_3_"><td class="entry"><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><a href="mainview_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>mainview.h</b></td><td class="desc"></td></tr>
+<tr id="row_1_0_"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img id="arr_1_0_" src="ftv2mnode.png" alt="o" width="16" height="22" onclick="toggleFolder('1_0_')"/><img id="img_1_0_" src="ftv2folderopen.png" alt="-" width="24" height="22" onclick="toggleFolder('1_0_')"/><a class="el" href="dir_c22cbe7cf1ce95a2eca8b51d59d1bcdc.html" target="_self">views</a></td><td class="desc"></td></tr>
+<tr id="row_1_0_0_" class="even"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2node.png" alt="o" width="16" height="22" /><a href="gamechooser_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>gamechooser.h</b></td><td class="desc"></td></tr>
+<tr id="row_1_0_1_"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2node.png" alt="o" width="16" height="22" /><a href="gameplay_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>gameplay.h</b></td><td class="desc"></td></tr>
+<tr id="row_1_0_2_" class="even"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><a href="view_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>view.h</b></td><td class="desc"></td></tr>
+<tr id="row_1_1_"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img id="arr_1_1_" src="ftv2mlastnode.png" alt="\" width="16" height="22" onclick="toggleFolder('1_1_')"/><img id="img_1_1_" src="ftv2folderopen.png" alt="-" width="24" height="22" onclick="toggleFolder('1_1_')"/><a class="el" href="dir_217eb4ab710484337ad67e70a94d7fea.html" target="_self">widgets</a></td><td class="desc"></td></tr>
+<tr id="row_1_1_0_" class="even"><td class="entry"><img src="ftv2vertline.png" alt="|" width="16" height="22" /><img src="ftv2blank.png" alt="&#160;" width="16" height="22" /><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><a href="gamechooserbutton_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>gamechooserbutton.h</b></td><td class="desc"></td></tr>
+<tr id="row_2_"><td class="entry"><img src="ftv2node.png" alt="o" width="16" height="22" /><a href="gamelist_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>gamelist.h</b></td><td class="desc"></td></tr>
+<tr id="row_3_" class="even"><td class="entry"><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><a href="mainview_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><b>mainview.h</b></td><td class="desc"></td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated on Fri Dec 11 2015 22:24:11 for Game Room by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Sat Dec 19 2015 20:03:42 for Game Room by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainview',['MainView',['../classMainView.html',1,'']]]
+  ['mainview',['MainView',['../class_main_view.html',1,'']]]
 ];

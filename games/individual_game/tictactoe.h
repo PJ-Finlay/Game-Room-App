@@ -3,9 +3,15 @@
 
 #include "../game.h"
 
+/**
+ * @brief Represents a Game of TicTacToe
+ */
 class TicTacToe : public Game
 {
 public:
+    /**
+     * @brief Creates a TicTacToe object
+     */
     TicTacToe();
 };
 
