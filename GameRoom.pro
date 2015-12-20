@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     mainview.cpp \
     gamelist.cpp \
     games/individual_game/tictactoe.cpp \
-    ui/widgets/gamechooserbutton.cpp
+    ui/widgets/gamechooserbutton.cpp \
+    ui/views/view.cpp
 
 HEADERS  += \
     ui/views/gamechooser.h \
@@ -28,4 +29,5 @@ HEADERS  += \
     mainview.h \
     gamelist.h \
     games/individual_game/tictactoe.h \
-    ui/widgets/gamechooserbutton.h
+    ui/widgets/gamechooserbutton.h \
+    ui/views/view.h

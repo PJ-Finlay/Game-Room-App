@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['mainview',['MainView',['../classMainView.html#aa7a1124577132170a15a381439beedc8',1,'MainView']]]
+  ['opengame',['openGame',['../class_main_view.html#a66c761b3273453b92030ce73478a4cd5',1,'MainView']]],
+  ['opengamechooser',['openGameChooser',['../class_main_view.html#a3c08a1a03cb97e803d65403b3e2cfb5d',1,'MainView']]]
 ];

@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -72,26 +65,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('mainview_8h_source.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,33 +90,39 @@ $(document).ready(function(){initNavTree('mainview_8h_source.html','');});
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classMainView.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMainView.html">MainView</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classMainView.html">MainView</a>(QWidget *parent = 0);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    QVBoxLayout* layout;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    QWidget* currentWidget;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;games/game.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_main_view.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_main_view.html">MainView</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;signals:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span> slots:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> openGame();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif // MAINVIEW_H</span></div>
-<div class="ttc" id="classMainView_html"><div class="ttname"><a href="classMainView.html">MainView</a></div><div class="ttdef"><b>Definition:</b> mainview.h:7</div></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_main_view.html#aa7a1124577132170a15a381439beedc8">MainView</a>(QWidget *parent = 0);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_view.html#a66c761b3273453b92030ce73478a4cd5">openGame</a>(<a class="code" href="class_game.html">Game</a> game);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_view.html#a3c08a1a03cb97e803d65403b3e2cfb5d">openGameChooser</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> swapViews(QWidget* newView);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QVBoxLayout* layout;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    QWidget* currentWidget;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif // MAINVIEW_H</span></div>
+<div class="ttc" id="class_main_view_html"><div class="ttname"><a href="class_main_view.html">MainView</a></div><div class="ttdoc">The MainView class is a widget that contains all of the other widgets that will be shown on screen...</div><div class="ttdef"><b>Definition:</b> mainview.h:12</div></div>
+<div class="ttc" id="class_main_view_html_a66c761b3273453b92030ce73478a4cd5"><div class="ttname"><a href="class_main_view.html#a66c761b3273453b92030ce73478a4cd5">MainView::openGame</a></div><div class="ttdeci">void openGame(Game game)</div><div class="ttdoc">Slot to change the view to a GamePlay QWidget, and pass it the Game parameter. </div><div class="ttdef"><b>Definition:</b> mainview.cpp:27</div></div>
+<div class="ttc" id="class_main_view_html_a3c08a1a03cb97e803d65403b3e2cfb5d"><div class="ttname"><a href="class_main_view.html#a3c08a1a03cb97e803d65403b3e2cfb5d">MainView::openGameChooser</a></div><div class="ttdeci">void openGameChooser()</div><div class="ttdoc">Slot to change the view to the GameChooser QWidget. </div><div class="ttdef"><b>Definition:</b> mainview.cpp:36</div></div>
+<div class="ttc" id="class_main_view_html_aa7a1124577132170a15a381439beedc8"><div class="ttname"><a href="class_main_view.html#aa7a1124577132170a15a381439beedc8">MainView::MainView</a></div><div class="ttdeci">MainView(QWidget *parent=0)</div><div class="ttdoc">Construct a new MainView object. </div><div class="ttdef"><b>Definition:</b> mainview.cpp:8</div></div>
+<div class="ttc" id="class_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">The superclass for every game. </div><div class="ttdef"><b>Definition:</b> game.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><b>mainview.h</b></li>
-    <li class="footer">Generated on Fri Dec 11 2015 22:24:11 for Game Room by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Sat Dec 19 2015 20:03:42 for Game Room by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>
