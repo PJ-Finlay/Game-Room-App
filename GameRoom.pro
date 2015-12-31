@@ -20,7 +20,10 @@ SOURCES += main.cpp\
     gamelist.cpp \
     games/individual_game/tictactoe.cpp \
     ui/widgets/gamechooserbutton.cpp \
-    ui/views/view.cpp
+    ui/views/view.cpp \
+    gamestate/individual_game_states/tictactoegamestate.cpp \
+    gamestate/gamestate.cpp \
+    debug/debugsandbox.cpp
 
 HEADERS  += \
     ui/views/gamechooser.h \
@@ -30,4 +33,8 @@ HEADERS  += \
     gamelist.h \
     games/individual_game/tictactoe.h \
     ui/widgets/gamechooserbutton.h \
-    ui/views/view.h
+    ui/views/view.h \
+    gamestate/individual_game_states/tictactoegamestate.h \
+    gamestate/gamestate.h \
+    debug/debugsandbox.h
+
