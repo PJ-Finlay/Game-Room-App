@@ -23,7 +23,9 @@ SOURCES += main.cpp\
     ui/views/view.cpp \
     gamestate/individual_game_states/tictactoegamestate.cpp \
     gamestate/gamestate.cpp \
-    debug/debugsandbox.cpp
+    debug/debugsandbox.cpp \
+    debug/unittests/gamestatestests.cpp \
+    debug/unittests/testdirectory.cpp
 
 HEADERS  += \
     ui/views/gamechooser.h \
@@ -36,5 +38,7 @@ HEADERS  += \
     ui/views/view.h \
     gamestate/individual_game_states/tictactoegamestate.h \
     gamestate/gamestate.h \
-    debug/debugsandbox.h
+    debug/debugsandbox.h \
+    debug/unittests/gamestatestests.h \
+    debug/unittests/testdirectory.h
 

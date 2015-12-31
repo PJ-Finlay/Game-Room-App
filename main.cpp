@@ -4,17 +4,15 @@
 
 
 /*Preprocesser Defines:
- *  QT_DEBUG - Defined only in Debugging Builds
  *  SANDBOXBUILD - Defined if it is a sandbox build, which directs control flow to  DebugSandbox
  *
  */
-#define SANDBOXBUILD
+//#define SANDBOXBUILD
 
 
 
 #ifdef SANDBOXBUILD
 #include "debug/debugsandbox.h"
-#define QT_DEBUG
 #endif
 
 int main(int argc, char *argv[])
