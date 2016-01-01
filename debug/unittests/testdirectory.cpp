@@ -3,6 +3,7 @@
 #include <QDebug>
 
 #include "gamestatestests.h"
+#include "aialgorithmtester.h"
 
 void TestDirectory::allTests()
 {
@@ -10,6 +11,10 @@ void TestDirectory::allTests()
     if(!TestDirectory::allGameStates()){
         allTestsPassed = false;
         qDebug() << "GameStates Failed";
+    }
+    if(!TestDirectory::allAIAlgorithms()){
+        allTestsPassed = false;
+        qDebug() << "AI Algorithms Failed";
     }
 
     if(allTestsPassed){
@@ -26,5 +31,15 @@ bool TestDirectory::allGameStates()
         qDebug() << "TicTacToeGameState Failed";
     }
 
+    return allTestsPassed;
+}
+
+bool TestDirectory::allAIAlgorithms()
+{
+    bool allTestsPassed = true;
+    if(!AIAlgorithmTester::testMinimax()){
+        allTestsPassed = false;
+        qDebug() << "Minimax Failed";
+    }
     return allTestsPassed;
 }

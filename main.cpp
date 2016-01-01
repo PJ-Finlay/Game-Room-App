@@ -7,7 +7,7 @@
  *  SANDBOXBUILD - Defined if it is a sandbox build, which directs control flow to  DebugSandbox
  *
  */
-//#define SANDBOXBUILD
+#define SANDBOXBUILD
 
 
 

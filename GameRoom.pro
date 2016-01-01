@@ -25,7 +25,9 @@ SOURCES += main.cpp\
     gamestate/gamestate.cpp \
     debug/debugsandbox.cpp \
     debug/unittests/gamestatestests.cpp \
-    debug/unittests/testdirectory.cpp
+    debug/unittests/testdirectory.cpp \
+    ai/algorithms/minimax.cpp \
+    debug/unittests/aialgorithmtester.cpp
 
 HEADERS  += \
     ui/views/gamechooser.h \
@@ -40,5 +42,7 @@ HEADERS  += \
     gamestate/gamestate.h \
     debug/debugsandbox.h \
     debug/unittests/gamestatestests.h \
-    debug/unittests/testdirectory.h
+    debug/unittests/testdirectory.h \
+    ai/algorithms/minimax.h \
+    debug/unittests/aialgorithmtester.h
 

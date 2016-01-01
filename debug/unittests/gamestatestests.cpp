@@ -39,16 +39,6 @@ bool GameStatesTests::testTicTacToeGameState()
         allTestsPassed = false;
     }
 
-    //Testing setGameState for proper turn handling
-    /**
-    t.initializeGame();
-    if(t.getTurn() != 1){
-        qDebug() << "setGameState not setting turn correcctly";
-        allTestsPassed = false;
-    }
-**/
-
-
 
     //Testing initializeGame
     t.initializeGame();
