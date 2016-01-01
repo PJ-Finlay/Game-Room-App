@@ -18,6 +18,12 @@ public:
      * @return If all of the tests were passed
      */
     static bool allGameStates();
+
+    /**
+     * @brief Runs all of the AIAlgorithm tests
+     * @return If all of the tests were passed
+     */
+    static bool allAIAlgorithms();
 };
 
 #endif // TESTDIRECTORY_H
