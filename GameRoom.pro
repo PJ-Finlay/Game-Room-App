@@ -27,7 +27,9 @@ SOURCES += main.cpp\
     debug/unittests/gamestatestests.cpp \
     debug/unittests/testdirectory.cpp \
     ai/algorithms/minimax.cpp \
-    debug/unittests/aialgorithmtester.cpp
+    debug/unittests/aialgorithmtester.cpp \
+    ai/computer_players/computerplayer.cpp \
+    ai/computer_players/tictactoecomputerplayer.cpp
 
 HEADERS  += \
     ui/views/gamechooser.h \
@@ -44,5 +46,7 @@ HEADERS  += \
     debug/unittests/gamestatestests.h \
     debug/unittests/testdirectory.h \
     ai/algorithms/minimax.h \
-    debug/unittests/aialgorithmtester.h
+    debug/unittests/aialgorithmtester.h \
+    ai/computer_players/computerplayer.h \
+    ai/computer_players/tictactoecomputerplayer.h
 
