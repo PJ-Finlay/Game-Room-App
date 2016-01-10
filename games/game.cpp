@@ -6,7 +6,7 @@ Game::Game()
 {
 }
 
-QString Game::getName(){
+QString Game::getName() const{
     return this->name;
 }
 

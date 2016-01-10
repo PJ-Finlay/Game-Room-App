@@ -20,10 +20,10 @@ public:
      * @brief Returns the standard list of games
      * @return All of the currently supported Games
      */
-    QList<Game>* getGameList();
+    QList<Game> getGameList();
 
 private:
-    QList<Game>* gamesList;
+    QList<Game> gamesList;
 };
 
 #endif // GAMELIST_H

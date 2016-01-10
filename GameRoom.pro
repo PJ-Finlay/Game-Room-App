@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     ai/algorithms/minimax.cpp \
     debug/unittests/aialgorithmtester.cpp \
     ai/computer_players/computerplayer.cpp \
-    ai/computer_players/tictactoecomputerplayer.cpp
+    ai/computer_players/tictactoecomputerplayer.cpp \
+    debug/cli.cpp
 
 HEADERS  += \
     ui/views/gamechooser.h \
@@ -48,5 +49,6 @@ HEADERS  += \
     ai/algorithms/minimax.h \
     debug/unittests/aialgorithmtester.h \
     ai/computer_players/computerplayer.h \
-    ai/computer_players/tictactoecomputerplayer.h
+    ai/computer_players/tictactoecomputerplayer.h \
+    debug/cli.h
 
