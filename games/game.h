@@ -19,7 +19,7 @@ public:
      * @brief Gets the name of the Game
      * @return The name of the game
      */
-    QString getName();
+    QString getName() const;
 
     /**
      * @brief Sets the name of the Game
