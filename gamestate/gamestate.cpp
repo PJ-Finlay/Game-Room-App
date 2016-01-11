@@ -1,11 +1,22 @@
 #include "gamestate.h"
 
 #include <QDebug>
+#include <QStringList>
 
 GameState::GameState()
 {
     undoEnabled = false;
 
+}
+
+bool GameState::isValidMove(QString move) const
+{
+    QStringList validMoves = findValidMoves();
+    if(validMoves.contains(move)){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 void GameState::makeMove(QString move)
@@ -14,7 +25,7 @@ void GameState::makeMove(QString move)
     updateGameState(move);
 }
 
-bool GameState::getUndoEnabled()
+bool GameState::getUndoEnabled() const
 {
     return this->undoEnabled;
 }
@@ -32,12 +43,12 @@ void GameState::undoMove()
     }
 }
 
-int GameState::undosRemaining()
+int GameState::undosRemaining() const
 {
     return undoRecord.size();
 }
 
-double GameState::competitivePosition(int player)
+double GameState::competitivePosition(int player) const
 {
     int winner = this->findWinners();
     if(winner == -1){//Game will continue
@@ -53,9 +64,7 @@ double GameState::competitivePosition(int player)
     }
 }
 
-#ifdef QT_DEBUG
-void GameState::printGameState()
+void GameState::printGameState() const
 {
     qDebug() << this->getGameState();
 }
-#endif

@@ -4,17 +4,14 @@
 #include <QString>
 #include <QWidget>
 
+#include "../gamestate/gamestate.h"
+
 /**
  * @brief The superclass for every game
  */
 class Game
 {
 public:
-    /**
-     * @brief Constructs a Game object
-     */
-    Game();
-
     /**
      * @brief Gets the name of the Game
      * @return The name of the game
@@ -31,7 +28,7 @@ public:
      * @brief Gets the widget that plays this game
      * @return The widget that plays the represented game
      */
-    QWidget* getGameWidget();
+    QWidget* getGameWidget() const;
 
 private:
     QString name;

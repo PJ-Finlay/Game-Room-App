@@ -5,7 +5,7 @@ ComputerPlayer::ComputerPlayer(double difficulty)
     this->setDifficulty(difficulty);
 }
 
-double ComputerPlayer::getDifficulty()
+double ComputerPlayer::getDifficulty() const
 {
     return difficulty;
 }

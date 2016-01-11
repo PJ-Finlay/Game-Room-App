@@ -8,7 +8,7 @@
 class TicTacToeComputerPlayer : public ComputerPlayer
 {
 public:
-    QString getMoveFromGameState(QString gamestate);
+    QString getMoveFromGameState(QString gamestate) const;
 };
 
 #endif // TICTACTOECOMPUTERPLAYER_H

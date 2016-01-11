@@ -13,6 +13,6 @@ GameList::GameList(){
 }
 
 
-QList<Game> GameList::getGameList(){
+QList<Game> GameList::getGameList() const{
     return gamesList;
 }

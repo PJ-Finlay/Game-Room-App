@@ -23,7 +23,7 @@ public:
      * @brief Gets the difficulty of the ComputerPlayer object
      * @return The current difficulty
      */
-    double getDifficulty();
+    double getDifficulty() const;
 
     /**
      * @brief Sets the difficulty of the ComputerPlayer object
@@ -36,7 +36,7 @@ public:
      * @param gamestate The game state that the computer should base its moves on
      * @return The move picked by the computer player.
      */
-    virtual QString getMoveFromGameState(QString gamestate) = 0;
+    virtual QString getMoveFromGameState(QString gamestate) const = 0;
 
 
 private:

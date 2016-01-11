@@ -20,7 +20,7 @@ public:
      * @brief Returns the standard list of games
      * @return All of the currently supported Games
      */
-    QList<Game> getGameList();
+    QList<Game> getGameList() const;
 
 private:
     QList<Game> gamesList;
