@@ -7,7 +7,6 @@
 #include <QList>
 
 #include "../gamelist.h"
-#include "../games/game.h"
 
 using namespace std;
 
@@ -26,6 +25,13 @@ void CLI::play()
     //Get Selection from user
     int selection;
     cin >> selection;
+    Game gameToPlay = gameList.at(selection);
 
-    cout << selection;
+    //Play that game
+    playGame(gameToPlay);
+}
+
+void CLI::playGame(Game gameToPlay)
+{
+
 }

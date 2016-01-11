@@ -3,7 +3,7 @@
 #include "../../gamestate/individual_game_states/tictactoegamestate.h"
 #include "../algorithms/minimax.h"
 
-QString TicTacToeComputerPlayer::getMoveFromGameState(QString gamestate)
+QString TicTacToeComputerPlayer::getMoveFromGameState(QString gamestate) const
 {
     TicTacToeGameState g;
     g.setGameState(gamestate);

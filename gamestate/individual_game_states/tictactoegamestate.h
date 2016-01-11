@@ -15,17 +15,14 @@ class TicTacToeGameState : public GameState
 public:
     TicTacToeGameState();
     void initializeGame();
-    QString getGameState();
+    QString getGameState() const;
     void setGameState(QString gameState);
-    bool isValidMove(QString move);
     void updateGameState(QString move);
-    int findWinners();
-    QList<int> getValidNumberOfPlayers();
-    int getTurn();
-    QStringList findValidMoves();
-#ifdef QT_DEBUG
-    void printGameState();
-#endif
+    int findWinners() const;
+    QList<int> getValidNumberOfPlayers() const;
+    int getTurn() const;
+    QStringList findValidMoves() const;
+    void printGameState() const;
 
 private:
     char board[3][3];

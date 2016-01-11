@@ -16,7 +16,7 @@ void TicTacToeGameState::initializeGame(){
     playerTurn = 1;
 }
 
-QString TicTacToeGameState::getGameState(){
+QString TicTacToeGameState::getGameState() const{
     QString toReturn;
     toReturn.append(board[0][2]);
     toReturn.append(board[1][2]);
@@ -50,16 +50,6 @@ void TicTacToeGameState::setGameState(QString gameState){
 
 }
 
-bool TicTacToeGameState::isValidMove(QString move){
-    int x = move.mid(0,1).toInt();
-    int y = move.mid(1,1).toInt();
-    if(board[x][y] == '_'){
-        return true;
-    }else{
-        return false;
-    }
-}
-
 void TicTacToeGameState::updateGameState(QString move){
     //Parse String
     int x = move.mid(0,1).toInt();
@@ -83,7 +73,7 @@ void TicTacToeGameState::updateGameState(QString move){
 /**
  * @todo Not as efficient as it could be
  */
-int TicTacToeGameState::findWinners(){
+int TicTacToeGameState::findWinners() const{
     //This finds winners by testing the 8 possible win conditions, then testing for a tie
 
     //Test the eight winning combinations
@@ -138,7 +128,7 @@ int TicTacToeGameState::findWinners(){
     return -1;
 }
 
-QList<int> TicTacToeGameState::getValidNumberOfPlayers()
+QList<int> TicTacToeGameState::getValidNumberOfPlayers() const
 {
     QList<int> toReturn;
     toReturn.append(2);
@@ -158,17 +148,16 @@ void TicTacToeGameState::incrementTurn()
 
 void TicTacToeGameState::deincrementTurn()
 {
-    qDebug() << "Called";
     //Since there are only two possible turn states deincrementTurn is the same as incrementTurn
     incrementTurn();
 }
 
-int TicTacToeGameState::getTurn()
+int TicTacToeGameState::getTurn() const
 {
     return playerTurn;
 }
 
-QStringList TicTacToeGameState::findValidMoves()
+QStringList TicTacToeGameState::findValidMoves() const
 {
     QStringList toReturn;
     for(int i = 0; i < 3; i++){ //Loop through x coordinates of the board
@@ -183,10 +172,8 @@ QStringList TicTacToeGameState::findValidMoves()
     return toReturn;
 }
 
-#ifdef QT_DEBUG
-void TicTacToeGameState::printGameState(){
+void TicTacToeGameState::printGameState() const{
     qDebug() << board[0][2] << board[1][2] << board[2][2];
     qDebug() << board[0][1] << board[1][1] << board[2][1];
     qDebug() << board[0][0] << board[1][0] << board[2][0];
 }
-#endif

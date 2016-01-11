@@ -31,7 +31,7 @@ public:
      * @brief Gets the current game state of the object
      * @return
      */
-    virtual QString getGameState() = 0;
+    virtual QString getGameState() const = 0;
 
     /**
      * @brief Set the game state of the object
@@ -44,39 +44,41 @@ public:
      * @param move The move that will be checked
      * @return The validity of the move.
      */
-    virtual bool isValidMove(QString move) = 0;
+    virtual bool isValidMove(QString move) const;
 
     /**
      * @brief Updates the game state of the object based on a move.
+     * Use makeMove instead of this method if undo functionality might be required.
      * @param move the move that will modify the game state
      */
     virtual void updateGameState(QString move) = 0;
 
     /**
      * @brief Makes a move. This involves adding to the undo record if valid, and then calling updateGameState
+     * This is the appropriate way to make a move if undo functionality is required.
      * @param The move to be made
      */
     void makeMove(QString move);
+
+    /**
+     * @brief Returns a QList of ints that contains all of the valid number of players for that game.
+     * @return A QList of all of the valid number of players
+     */
+    virtual QList<int> getValidNumberOfPlayers() const = 0;
+
+    /**
+     * @brief Finds which players turn it is.
+     * @return The player whose turn it is
+     */
+    virtual int getTurn() const = 0;
+
 
     /**
      * @brief Finds out if this object has undo enabled.
      * Undo is a potential resource waste, and is intended for use with user facing games and not games used by ComputerPlayers.
      * @return The value of undoEnabled
      */
-
-    /**
-     * @brief Returns a QList of ints that contains all of the valid number of players for that game.
-     * @return A QList of all of the valid number of players
-     */
-    virtual QList<int> getValidNumberOfPlayers() = 0;
-
-    /**
-     * @brief Finds which players turn it is.
-     * @return The player whose turn it iw
-     */
-    virtual int getTurn() = 0;
-
-    bool getUndoEnabled();
+    bool getUndoEnabled() const;
 
     /**
      * @brief Starts saving past game states for undo
@@ -92,19 +94,19 @@ public:
      * @brief Finds the number of saved undo states
      * @return The number of undos remaining
      */
-    int undosRemaining();
+    int undosRemaining() const;
 
     /**
      * @brief Find if there are any winners to the game
      * @return Any potential winners. -1 is no game ending condition, 0 is a tie, and a positive integer is the number of the winning player.
      */
-    virtual int findWinners() = 0;
+    virtual int findWinners() const = 0;
 
     /**
      * @brief Finds a QList of all of the valid moves that can be made at the current game state
      * @return A QList of the valid moves that can be made
      */
-    virtual QStringList findValidMoves() = 0;
+    virtual QStringList findValidMoves() const = 0;
 
     /**
      * @brief Makes an estimate of the competitive position of the player. This is intended for use by a computer player
@@ -113,14 +115,13 @@ public:
      * @param player The player who's competative position is being evaluated
      * @return The players competative position
      */
-    virtual double competitivePosition(int player);
+    virtual double competitivePosition(int player) const;
 
     /**
-     * @brief Prints the game state in a format useful for debugging purposes using QDebug()
+     * @brief Prints the game state in a format useful for debugging purposes using qDebug()
      */
-#ifdef QT_DEBUG
-    virtual void printGameState();
-#endif
+    virtual void printGameState() const;
+
 
 
 
