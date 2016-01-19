@@ -52,3 +52,4 @@ HEADERS  += \
     ai/computer_players/tictactoecomputerplayer.h \
     debug/cli.h
 
+CONFIG += c++11

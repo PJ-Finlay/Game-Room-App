@@ -32,7 +32,6 @@ public:
 
 private:
     QString name;
-
 };
 
 #endif // GAME_H
