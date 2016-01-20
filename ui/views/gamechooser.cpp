@@ -2,6 +2,7 @@
 
 #include <QVBoxLayout>
 #include <QList>
+#include <memory>
 
 #include "../../gamelist.h"
 #include "../../games/game.h"
@@ -14,11 +15,11 @@ GameChooser::GameChooser(QWidget *parent) : View(parent)
 
     //Get the list of the games
     GameList* gameList = new GameList();
-    QList<Game> list = gameList->getGameList();
+    std::shared_ptr<QList<Game>> list = gameList->getGameList();
 
     //Loop through list and add each game to page as a GameChooserButton
-    for (int i = 0; i < list.size(); i++) {
-        Game game = list.at(i);
+    for (int i = 0; i < list->size(); i++) {
+        Game game = list->at(i);
         GameChooserButton* button = new GameChooserButton(game,this);
         layout->addWidget(button);
 
