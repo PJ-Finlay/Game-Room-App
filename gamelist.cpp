@@ -13,6 +13,7 @@ GameList::GameList(){
 }
 
 
-QList<Game> GameList::getGameList() const{
-    return gamesList;
+std::shared_ptr<QList<Game>> GameList::getGameList(){
+    std::shared_ptr<QList<Game>> toReturn(&this->gamesList);
+    return toReturn;
 }
