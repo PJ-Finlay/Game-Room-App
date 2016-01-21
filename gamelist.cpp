@@ -8,8 +8,8 @@ GameList::GameList(){
     gamesList = q;
 
     //Create all of the game objects
-    Game* tictactoe = new TicTacToe();
-    gamesList.append(*tictactoe);
+    Game tictactoe;
+    gamesList.append(tictactoe);
 }
 
 

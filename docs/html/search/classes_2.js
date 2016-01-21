@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainview',['MainView',['../class_main_view.html',1,'']]]
+  ['debugsandbox',['DebugSandbox',['../class_debug_sandbox.html',1,'']]]
 ];
