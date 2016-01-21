@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['view',['View',['../class_view.html',1,'View'],['../class_view.html#a8465068c9402300c637f8bea23040c09',1,'View::View()']]]
+  ['mainview',['MainView',['../class_main_view.html',1,'MainView'],['../class_main_view.html#aa7a1124577132170a15a381439beedc8',1,'MainView::MainView()']]],
+  ['makemove',['makeMove',['../class_game_state.html#a8188d21bd51b3bf8298138b68cc0ae77',1,'GameState']]],
+  ['minimax',['Minimax',['../class_minimax.html',1,'']]]
 ];

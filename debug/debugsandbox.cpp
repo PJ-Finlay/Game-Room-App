@@ -8,9 +8,7 @@
 
 void DebugSandbox::test()
 {
-    QString* s = new QString("Testing");
-    std::shared_ptr<QString> sp(new QString("Test"));
-    //TestDirectory::allTests();
+    TestDirectory::allTests();
     //CLI::play();
 }
 
