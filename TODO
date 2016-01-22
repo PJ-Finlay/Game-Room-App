@@ -1,5 +1,5 @@
 Figure out abstract classes and implement them correctly
 Refactor Code to appropriatly return objects vs pointers & check for memory leaks in the process
 Improve Minimax
-
+Game should be abstract
 

@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QWidget>
+#include <memory>
 
 #include "../gamestate/gamestate.h"
 
@@ -29,6 +30,12 @@ public:
      * @return The widget that plays the represented game
      */
     QWidget* getGameWidget() const;
+
+    /**
+     * @brief Gets a shared_ptr to the GameState that represents the game
+     * @return The gamestate
+     */
+    virtual std::shared_ptr<GameState> getGameState() const;
 
 private:
     QString name;

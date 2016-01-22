@@ -8,6 +8,7 @@
 #include <QProcess>
 
 #include "../gamelist.h"
+#include "../gamestate/gamestate.h"
 
 using namespace std;
 
@@ -37,6 +38,12 @@ void CLI::playGame(Game gameToPlay)
 {
     clearScreen();
     cout << gameToPlay.getName().toStdString() << endl;
+
+    //Get the GameState for the game that is being played
+    std::shared_ptr<GameState> gameState = gameToPlay.getGameState();
+    gameState->initializeGame();
+
+
 
 }
 
