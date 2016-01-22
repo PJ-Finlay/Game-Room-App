@@ -9,6 +9,7 @@
 
 #include "../gamelist.h"
 #include "../gamestate/gamestate.h"
+#include "../ai/computer_players/computerplayer.h"
 
 using namespace std;
 
@@ -36,14 +37,35 @@ void CLI::play()
 
 void CLI::playGame(Game gameToPlay)
 {
-    clearScreen();
-    cout << gameToPlay.getName().toStdString() << endl;
-
     //Get the GameState for the game that is being played
     std::shared_ptr<GameState> gameState = gameToPlay.getGameState();
+    //Get the ComputerPlayer for the game that is being played
+    //std::shared_ptr<ComputerPlayer> computerPlayer = gameToPlay.getComputerPlayer();
+
     gameState->initializeGame();
+    gameState->enableUndo();
 
+    QString message;
+    while(gameState->findWinners() == -1){
+        //Print Current State
+        clearScreen();
+        cout << gameToPlay.getName().toStdString() << endl << endl;
+        gameState->printGameState();
+        cout << message.toStdString();
+        message = "";
 
+        //if(gameState->getTurn() == 1){
+            string input;
+            cin >> input;
+            if(gameState->isValidMove(QString::fromStdString(input))){
+                gameState->makeMove(QString::fromStdString(input));
+            }else{
+                message.append("Invalid Move\n");
+            }
+        //}else{
+        //    gameState->makeMove(computerPlayer->getMoveFromGameState(gameState->getGameState()));
+       // }
+    }
 
 }
 
