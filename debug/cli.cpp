@@ -1,11 +1,11 @@
 #include "cli.h"
 
-#include <QDebug>
 #include <QString>
 #include <iostream>
 #include <string>
 #include <QList>
 #include <memory>
+#include <QProcess>
 
 #include "../gamelist.h"
 
@@ -13,6 +13,7 @@ using namespace std;
 
 void CLI::play()
 {
+
     //Get Game List
     GameList gameListObject;
     std::shared_ptr<QList<Game>> gameList = gameListObject.getGameList();
@@ -23,16 +24,27 @@ void CLI::play()
         cout << i << " - " << gameList->at(i).getName().toStdString() << endl;
     }
 
-    //Get Selection from user
-    int selection;
-    cin >> selection;
-    Game gameToPlay = gameList->at(selection);
+    //Get user input
+    int input;
+    cin >> input;
 
-    //Play that game
+    Game gameToPlay = gameList->at(input);
     playGame(gameToPlay);
+
 }
 
 void CLI::playGame(Game gameToPlay)
 {
+    clearScreen();
+    cout << gameToPlay.getName().toStdString() << endl;
 
+}
+
+void CLI::clearScreen()
+{
+    //Windows
+    //QProcess::execute("CLS");
+
+    //Unix
+    QProcess::execute("clear");
 }

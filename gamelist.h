@@ -14,18 +14,10 @@ class GameList
 {
 public:
     /**
-     * @brief Creates a new GameList object
-     */
-    explicit GameList();
-
-    /**
      * @brief Returns the standard list of games
      * @return All of the currently supported Games
      */
-    std::shared_ptr<QList<Game>> getGameList();
-
-private:
-    QList<Game> gamesList;
+    static std::shared_ptr<QList<Game>> getGameList();
 };
 
 #endif // GAMELIST_H

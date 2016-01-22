@@ -10,6 +10,7 @@ public:
 
 private:
     static void playGame(Game gameToPlay);
+    static void clearScreen();
 };
 
 #endif // CLI_H
