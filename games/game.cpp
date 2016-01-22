@@ -15,3 +15,8 @@ QWidget* Game::getGameWidget() const{
     return p;
 }
 
+std::shared_ptr<GameState> Game::getGameState() const
+{
+    return 0;
+}
+
