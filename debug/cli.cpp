@@ -38,6 +38,11 @@ void CLI::play()
 
 void CLI::playGame(Game gameToPlay)
 {
+    clearScreen();
+    cout << "What player do you want to play as?" << endl << endl << "0 - All" << endl << "n -Specific Player" << endl;
+    int playAs;
+    cin >> playAs;
+
     //Get the GameState for the game that is being played
     std::shared_ptr<GameState> gameState = gameToPlay.getGameState();
     //Get the ComputerPlayer for the game that is being played
@@ -56,7 +61,7 @@ void CLI::playGame(Game gameToPlay)
         cout << message.toStdString();
         message = "";
 
-        if(gameState->getTurn() == 1){
+        if(gameState->getTurn() == playAs || playAs == 0){
             string input;
             cin >> input;
             if(gameState->isValidMove(QString::fromStdString(input))){
