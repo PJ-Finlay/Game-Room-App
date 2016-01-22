@@ -42,7 +42,7 @@ public:
      * @brief Gets a shared_ptr to the ComputerPlayer for a given game
      * @return The shared_ptr to the Computer Player
      */
-    //virtual std::shared_ptr<ComputerPlayer> getComputerPlayer() const;
+    virtual std::shared_ptr<ComputerPlayer> getComputerPlayer() const;
 
 private:
     QString name;
