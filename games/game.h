@@ -6,6 +6,7 @@
 #include <memory>
 
 #include "../gamestate/gamestate.h"
+#include "../ai/computer_players/computerplayer.h"
 
 /**
  * @brief The superclass for every game
@@ -36,6 +37,12 @@ public:
      * @return The gamestate
      */
     virtual std::shared_ptr<GameState> getGameState() const;
+
+    /**
+     * @brief Gets a shared_ptr to the ComputerPlayer for a given game
+     * @return The shared_ptr to the Computer Player
+     */
+    //virtual std::shared_ptr<ComputerPlayer> getComputerPlayer() const;
 
 private:
     QString name;

@@ -2,6 +2,8 @@
 
 #include <QLabel>
 
+#include "../gamestate/individual_game_states/tictactoegamestate.h" //Should be temporary
+
 QString Game::getName() const{
     return this->name;
 }
@@ -17,6 +19,8 @@ QWidget* Game::getGameWidget() const{
 
 std::shared_ptr<GameState> Game::getGameState() const
 {
-    return 0;
+    std::shared_ptr<TicTacToeGameState> toReturn(new TicTacToeGameState());
+    return toReturn;
 }
+
 
