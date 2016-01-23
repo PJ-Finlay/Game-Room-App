@@ -1,2 +1,4 @@
 Improve Minimax
 Figure Out how to cross compile
+CheckersGameState should be broken up into an 8x8 grid GameState for Chess/Checkers
+Consider Creating a superclass that would encompase all grid board games (Chess,Checkers,TicTacToe, potentially more)
