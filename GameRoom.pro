@@ -14,7 +14,6 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     games/game.cpp \
-    mainview.cpp \
     gamelist.cpp \
     games/individual_game/tictactoe.cpp \
     gamestate/individual_game_states/tictactoegamestate.cpp \
@@ -30,7 +29,6 @@ SOURCES += main.cpp\
 
 HEADERS  += \
     games/game.h \
-    mainview.h \
     gamelist.h \
     games/individual_game/tictactoe.h \
     gamestate/individual_game_states/tictactoegamestate.h \

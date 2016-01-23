@@ -8,13 +8,6 @@
 #include "../gamestate/gamestate.h"
 #include "../ai/computer_players/computerplayer.h"
 
-
-
-
-
-
-#include <QDebug>
-
 /**
  * @brief The superclass for every game
  */

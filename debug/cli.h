@@ -9,7 +9,7 @@ public:
     static void play();
 
 private:
-    static void playGame(Game gameToPlay);
+    static void playGame(std::shared_ptr<Game>);
     static void clearScreen();
 };
 
