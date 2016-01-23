@@ -8,7 +8,7 @@
 
 void DebugSandbox::test()
 {
-    //TestDirectory::allTests();
-    CLI::play();
+    TestDirectory::allTests();
+    //CLI::play();
 }
 
