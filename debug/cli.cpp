@@ -48,6 +48,11 @@ void CLI::playGame(Game gameToPlay)
     //Get the ComputerPlayer for the game that is being played
     std::shared_ptr<ComputerPlayer> computerPlayer = gameToPlay.getComputerPlayer();
 
+    cout << gameToPlay.getName().toStdString();
+
+    int inputasdf;
+    cin >> inputasdf;
+
     gameState->initializeGame();
     gameState->enableUndo();
 
@@ -94,8 +99,7 @@ void CLI::playGame(Game gameToPlay)
             validInput = true;
         }
         if(input.compare("m") == 0){
-            play();
-            validInput = true;
+            return;
         }
         return;
     }
