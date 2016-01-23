@@ -18,15 +18,11 @@ void TicTacToeGameState::initializeGame(){
 
 QString TicTacToeGameState::getGameState() const{
     QString toReturn;
-    toReturn.append(board[0][2]);
-    toReturn.append(board[1][2]);
-    toReturn.append(board[2][2]);
-    toReturn.append(board[0][1]);
-    toReturn.append(board[1][1]);
-    toReturn.append(board[2][1]);
-    toReturn.append(board[0][0]);
-    toReturn.append(board[1][0]);
-    toReturn.append(board[2][0]);
+    for(int y = 2; y >= 0; y--){
+        for(int x = 0; x < 3; x++){
+            toReturn.append(board[x][y]);
+        }
+    }
     return toReturn;
 }
 
