@@ -37,7 +37,7 @@ public:
      * @brief Set the game state of the object
      * @param gameState The new game state of the object
      */
-    virtual void setGameState(QString gameState) = 0;
+     virtual void setGameState(QString gameState) = 0;
 
     /**
      * @brief Finds out if a provided move is valid

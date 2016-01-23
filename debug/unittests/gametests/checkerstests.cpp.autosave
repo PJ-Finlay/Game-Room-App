@@ -21,16 +21,20 @@ bool CheckersTests::testCheckersGameState()
 
     CheckersGameState g;
 
+    //Test getTurn
     if(g.getTurn() != 1){
         allTestsPassed = false;
         qDebug() << "Getting or setting turn not working correctly";
     }
 
+    //Test initialize game
     g.initializeGame();
     if(g.getGameState().compare("________________________________________________________________") !=0 ){
         allTestsPassed = false;
         qDebug() << "Initialize Game or getGameState not working correctly";
     }
+    
+    
 
     return allTestsPassed;
 }
