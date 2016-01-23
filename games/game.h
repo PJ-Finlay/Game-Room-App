@@ -43,13 +43,13 @@ public:
      * @brief Gets a shared_ptr to the GameState that represents the game
      * @return The gamestate
      */
-    virtual std::shared_ptr<GameState> getGameState() const;
+    virtual std::shared_ptr<GameState> getGameState() const = 0;
 
     /**
      * @brief Gets a shared_ptr to the ComputerPlayer for a given game
      * @return The shared_ptr to the Computer Player
      */
-    virtual std::shared_ptr<ComputerPlayer> getComputerPlayer() const;
+    virtual std::shared_ptr<ComputerPlayer> getComputerPlayer() const = 0;
 
 private:
     QString name;
