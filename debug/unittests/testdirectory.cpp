@@ -2,8 +2,12 @@
 
 #include <QDebug>
 
+//Games
 #include "gametests/tictactoetests.h"
-#include "aialgorithmtester.h"
+#include "gametests/checkerstests.h"
+
+//AI Algorithms
+#include "aialgorithm/aialgorithmtester.h"
 
 void TestDirectory::allTests()
 {
@@ -23,6 +27,7 @@ bool TestDirectory::allGames()
     bool allTestsPassed = true;
 
     if(!TicTacToeTests::allTests()) allTestsPassed = false;
+    if(!CheckersTests::allTests()) allTestsPassed = false;
 
     if(!allTestsPassed) qDebug() << "Games Failed";
 

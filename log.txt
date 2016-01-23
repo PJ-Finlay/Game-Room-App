@@ -1,0 +1,179 @@
+commit c905c1ff0b3ba4edffbe8ab3866ec01e7a7913fc
+Author: = <pjfin123@gmail.com>
+Date:   Sat Jan 23 11:12:59 2016 -0500
+
+    Organized unit tests into folders, and updated GameRoom.pro
+
+commit 73633f253a86364d47fa4ada24e7cd18e960715b
+Author: = <pjfin123@gmail.com>
+Date:   Sat Jan 23 10:59:13 2016 -0500
+
+    Refactored Unit Tests
+
+commit 6b3e9954fe33340a78376a8d99675d0c120d2639
+Author: = <pjfin123@gmail.com>
+Date:   Sat Jan 23 10:43:25 2016 -0500
+
+    Refactored the way that GameList works
+
+commit d86ef6769129289a423e06d456383c87e4ed5dff
+Author: = <pjfin123@gmail.com>
+Date:   Sat Jan 23 10:08:04 2016 -0500
+
+    MainView moved to .ui folder to be out of the way
+
+commit e6fc9dab147d023f6df3540665d04a83475bdb22
+Author: = <pjfin123@gmail.com>
+Date:   Sat Jan 23 10:05:29 2016 -0500
+
+    Moved ui folder to .ui so that the backend can be built first
+
+commit 21a91cb2f141fb16123642fc826342044fb7cd5f
+Author: P.J. Finlay <pjfin123@gmail.com>
+Date:   Fri Jan 22 19:58:52 2016 +0000
+
+    Improved CLI
+
+commit 622623c0210229ec228ce63815bde2e19e9078f9
+Author: P.J. Finlay <pjfin123@gmail.com>
+Date:   Fri Jan 22 19:46:05 2016 +0000
+
+    CLI working
+
+commit 7e083dffd205674ae2b9978fe1b54689030f8d05
+Author: P.J. Finlay <pjfin123@gmail.com>
+Date:   Fri Jan 22 17:16:18 2016 +0000
+
+    Continued Work on CLI
+
+commit 3ae41e518934b9e3b2c071f24040cbf5dadb29c9
+Author: P.J. Finlay <pjfin123@gmail.com>
+Date:   Fri Jan 22 13:45:29 2016 +0000
+
+    Worked on CLI
+
+commit 05272d026ba6bd6b58e00f302e3ce120ebe8959d
+Author: P.J. Finlay <pjfin123@gmail.com>
+Date:   Fri Jan 22 10:23:54 2016 +0000
+
+    Updated Memory Management For GameList
+
+commit 7edf4a9206008f079464a1ee2145eed159a61173
+Author: P.J. Finlay <pjfin123@gmail.com>
+Date:   Thu Jan 21 10:05:24 2016 +0000
+
+    Fixed Memory Management issue, and ran doxygen
+
+commit 99b3d5779f97931afe8285d8be850b19b2803bc9
+Author: P.J. Finlay <pjfin123@gmail.com>
+Date:   Wed Jan 20 10:04:05 2016 +0000
+
+    Refactored to use std::shared_ptr for GameList
+
+commit 28cd922040079b23d40a771738dd2133c91b3f42
+Author: P.J. Finlay <pjfin123@gmail.com>
+Date:   Tue Jan 19 10:23:23 2016 +0000
+
+    Configured project to use c++11
+
+commit 079cd10eb0f7cb314b1902e30f3e1628672eae4d
+Author: = <pjfin123@gmail.com>
+Date:   Sun Jan 10 19:11:43 2016 -0500
+
+    Changed code to use const correctly
+
+commit 886439e58714e16431b099ff016d4a43fcbcbebd
+Author: = <pjfin123@gmail.com>
+Date:   Sat Jan 9 19:33:42 2016 -0500
+
+    Began CLI, and began refactoring to use const correctly
+
+commit 45b7860aa0f4597fc2e296ec4dd83a2396dd56da
+Author: = <pjfin123@gmail.com>
+Date:   Thu Dec 31 20:31:44 2015 -0500
+
+    setup Computer Player System
+
+commit f5b2cb9767e30a82a43defbb2d71aec7d62d6d07
+Author: = <pjfin123@gmail.com>
+Date:   Thu Dec 31 19:55:30 2015 -0500
+
+    Added Minimax Algorithm
+
+commit 2a383843527abda5985db111e40155a4fd7f37ac
+Author: = <pjfin123@gmail.com>
+Date:   Thu Dec 31 17:29:01 2015 -0500
+
+    Setup Debugging
+
+commit 93e49425a232c7a506f91289a434311154b594f6
+Author: = <pjfin123@gmail.com>
+Date:   Thu Dec 31 14:55:51 2015 -0500
+
+    Introduced Preprocesser system
+
+commit 6c2254a4ee5b858563eabcad0f558c1ca5201764
+Author: = <pjfin123@gmail.com>
+Date:   Sat Dec 19 20:06:49 2015 -0500
+
+    Documentation Updated
+
+commit d4792e38d0ba0fc47d91cffecb7cf9a88b0134c2
+Author: = <pjfin123@gmail.com>
+Date:   Sat Dec 19 14:24:02 2015 -0500
+
+    Cleaned up code, and generated documentation
+
+commit 81d49a3e1574022c8fe678863de116cb54bc4ad7
+Author: = <pjfin123@gmail.com>
+Date:   Sat Dec 19 14:02:17 2015 -0500
+
+    Implemented GamePlay view return to GameChooser
+
+commit cda314d9a1ebe2762db9e7397d88fb535e94d687
+Author: = <pjfin123@gmail.com>
+Date:   Sat Dec 19 13:34:27 2015 -0500
+
+    Setup GamePlay view
+
+commit 023684275ca0562dae54ad4d0c27b92da4a6eda9
+Author: = <pjfin123@gmail.com>
+Date:   Sat Dec 19 13:24:58 2015 -0500
+
+    Made sure that QWidgets had parents when appropriate for efficient memory management
+
+commit ea29c43dc95c794d40baf303db04df9449902c05
+Author: = <pjfin123@gmail.com>
+Date:   Sat Dec 19 13:13:03 2015 -0500
+
+    Added GameChooserButton class
+
+commit d7b196fe2732d09a74c62ba6b8c77b7432e58b06
+Author: = <pjfin123@gmail.com>
+Date:   Fri Dec 11 22:32:06 2015 -0500
+
+    Added Doxygen Documentation System
+
+commit be96ebe64a2fd28a430bbf15a501f42736fcb11a
+Author: = <pjfin123@gmail.com>
+Date:   Sun Dec 6 16:12:32 2015 -0500
+
+    GameList started
+
+commit 95a84e80c7662766bf0a749c3e3d7fdbeb323919
+Author: = <pjfin123@gmail.com>
+Date:   Sun Dec 6 12:15:43 2015 -0500
+
+    Changing Views Working
+
+commit a91815e07cdd28770d1f0b86f75183f24de91fc4
+Author: PJ Finlay <pjfin123@gmail.com>
+Date:   Sat Dec 5 20:41:40 2015 -0500
+
+    Initial Commit'
+
+commit 700515bfa95bc29c5a78622632b8a0e458955828
+Author: PJ Finlay <pjfin@users.noreply.github.com>
+Date:   Sat Dec 5 20:31:45 2015 -0500
+
+    Initial commit
