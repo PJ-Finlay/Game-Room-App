@@ -21,11 +21,14 @@ SOURCES += main.cpp\
     debug/debugsandbox.cpp \
     debug/unittests/testdirectory.cpp \
     ai/algorithms/minimax.cpp \
-    debug/unittests/aialgorithmtester.cpp \
+    debug/unittests/aialgorithm/aialgorithmtester.cpp \
     ai/computer_players/computerplayer.cpp \
     ai/computer_players/tictactoecomputerplayer.cpp \
     debug/cli.cpp \
-    debug/unittests/tictactoetests.cpp
+    debug/unittests/gametests/checkerstests.cpp \
+    debug/unittests/gametests/tictactoetests.cpp \
+
+
 
 HEADERS  += \
     games/game.h \
@@ -36,10 +39,12 @@ HEADERS  += \
     debug/debugsandbox.h \
     debug/unittests/testdirectory.h \
     ai/algorithms/minimax.h \
-    debug/unittests/aialgorithmtester.h \
+    debug/unittests/aialgorithm/aialgorithmtester.h \
     ai/computer_players/computerplayer.h \
     ai/computer_players/tictactoecomputerplayer.h \
     debug/cli.h \
-    debug/unittests/tictactoetests.h
+    games/game_type/cardgame.h \
+    debug/unittests/gametests/checkerstests.h \
+    debug/unittests/gametests/tictactoetests.h \
 
 CONFIG += c++11

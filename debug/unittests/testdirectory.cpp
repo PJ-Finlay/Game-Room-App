@@ -2,7 +2,7 @@
 
 #include <QDebug>
 
-#include "tictactoetests.h"
+#include "gametests/tictactoetests.h"
 #include "aialgorithmtester.h"
 
 void TestDirectory::allTests()
