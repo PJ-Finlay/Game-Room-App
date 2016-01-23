@@ -20,12 +20,14 @@ QWidget* Game::getGameWidget() const{
 
 std::shared_ptr<GameState> Game::getGameState() const
 {
+    qDebug() << "Game.h - getGameState";
     std::shared_ptr<TicTacToeGameState> toReturn(new TicTacToeGameState());
     return toReturn;
 }
 
 std::shared_ptr<ComputerPlayer> Game::getComputerPlayer() const
 {
+    qDebug() << "Game.h - getComputerPlayer";
     std::shared_ptr<TicTacToeComputerPlayer> toReturn(new TicTacToeComputerPlayer());
     return toReturn;
 }
