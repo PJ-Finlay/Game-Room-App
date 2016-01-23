@@ -4,14 +4,18 @@
 
 #include "games/individual_game/tictactoe.h"
 
-std::shared_ptr<QList<Game>> GameList::getGameList(){
-    //Create the QList to Return
-    std::shared_ptr<QList<Game>> toReturn(new QList<Game>());
+std::shared_ptr<Game> GameList::getGame(int index)
+{
+    if(index == 0){
+        std::shared_ptr<TicTacToe> ticTacToe(new TicTacToe());
+        return ticTacToe;
+    }else{ //Invalid Index
+        std::shared_ptr<TicTacToe> ticTacToe(new TicTacToe());
+        return ticTacToe;
+    }
+}
 
-    //Add all games to the list
-    std::shared_ptr<TicTacToe> ticTacToe(new TicTacToe());
-    toReturn->append(*ticTacToe);
-
-    //Return the QList
-    return toReturn;
+int GameList::numberOfGames()
+{
+    return 1;
 }

@@ -1,6 +1,6 @@
 #include <QApplication>
 
-#include "mainview.h"
+//#include "mainview.h"
 
 
 /*Preprocesser Defines:
