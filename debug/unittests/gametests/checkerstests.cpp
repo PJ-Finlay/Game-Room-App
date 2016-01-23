@@ -124,13 +124,13 @@ bool CheckersTests::testCheckersGameState()
     }
     g.setGameState("_____________________b_____________________r____________________1");
     QStringList validMoves = g.findValidMoves();
-    if(!validMoves.contains("5566") || !validMoves.contains("5546")){
+    if(!validMoves.contains("5566") || !validMoves.contains("5546") || validMoves.size() != 2){
         allTestsPassed = false;
         qDebug() << "findValidMoves not working correctly";
     }
     g.setGameState("_____________________b_____________________r____________________2");
     validMoves = g.findValidMoves();
-    if(!validMoves.contains("3221") || !validMoves.contains("3241")){
+    if(!validMoves.contains("3221") || !validMoves.contains("3241") || validMoves.size() != 2){
         allTestsPassed = false;
         qDebug() << "findValidMoves not working correctly";
     }
@@ -140,10 +140,37 @@ bool CheckersTests::testCheckersGameState()
         allTestsPassed = false;
         qDebug() << "findValidMoves not working correctly";
     }
-
-
-    g.printGameState();
-    qDebug() << g.findValidMoves().join(",");
+    g.setGameState("B_______________________________________________________________2");
+    if(g.findValidMoves().join(",").compare("") != 0){
+        allTestsPassed = false;
+        qDebug() << "findValidMoves not working correctly";
+    }
+    g.setGameState("_______________________________________________________________R2");
+    if(g.findValidMoves().join(",").compare("7061") != 0){
+        allTestsPassed = false;
+        qDebug() << "findValidMoves not working correctly";
+    }
+    g.setGameState("_______________________________________________________________R1");
+    if(g.findValidMoves().join(",").compare("") != 0){
+        allTestsPassed = false;
+        qDebug() << "findValidMoves not working correctly";
+    }
+    g.setGameState("______________________________________________________b________R2");
+    if(g.findValidMoves().join(",").compare("7052") != 0){
+        allTestsPassed = false;
+        qDebug() << "findValidMoves not working correctly";
+    }
+    g.setGameState("______________________________________________________B________R2");
+    if(g.findValidMoves().join(",").compare("7052") != 0){
+        allTestsPassed = false;
+        qDebug() << "findValidMoves not working correctly";
+    }
+    g.setGameState("______________________________________________________B________R1");
+    validMoves = g.findValidMoves();
+    if(!validMoves.contains("6150") || !validMoves.contains("6172") || !validMoves.contains("6152") || validMoves.size() != 3){
+        allTestsPassed = false;
+        qDebug() << "findValidMoves not working correctly";
+    }
 
     return allTestsPassed;
 }
