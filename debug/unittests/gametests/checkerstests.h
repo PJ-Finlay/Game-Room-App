@@ -5,7 +5,8 @@
 class CheckersTests
 {
 public:
-    CheckersTests();
+    static bool allTests();
+    static bool testCheckersGameState();
 };
 
 #endif // CHECKERSTESTS_H
