@@ -1,4 +1,4 @@
-#include "gamestatestests.h"
+#include "tictactoetests.h"
 
 
 #include <QDebug>
@@ -6,7 +6,18 @@
 
 #include "../../gamestate/individual_game_states/tictactoegamestate.h"
 
-bool GameStatesTests::testTicTacToeGameState()
+bool TicTacToeTests::allTests()
+{
+    bool allTestsPassed = true;
+
+    if(!testTicTacToeGameState()) allTestsPassed = false;
+
+    if(!allTestsPassed) qDebug() << "TicTacToe Failed";
+
+    return allTestsPassed;
+}
+
+bool TicTacToeTests::testTicTacToeGameState()
 {
     bool allTestsPassed = true;
 

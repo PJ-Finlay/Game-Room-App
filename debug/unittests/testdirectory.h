@@ -14,10 +14,10 @@ public:
     static void allTests();
 
     /**
-     * @brief Runs all of the unit tests for game states
+     * @brief Runs all of the unit tests for games
      * @return If all of the tests were passed
      */
-    static bool allGameStates();
+    static bool allGames();
 
     /**
      * @brief Runs all of the AIAlgorithm tests
