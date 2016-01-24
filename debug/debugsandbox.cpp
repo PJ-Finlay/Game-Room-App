@@ -10,8 +10,8 @@
 
 void DebugSandbox::test()
 {
-    //cli();
-    unitests();
+    cli();
+    //unitests();
     //CheckersTests::testCheckersGameState();
 }
 
