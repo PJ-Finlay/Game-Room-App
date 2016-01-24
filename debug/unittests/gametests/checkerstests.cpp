@@ -209,7 +209,29 @@ bool CheckersTests::testCheckersGameState()
 
     //Testing initializeGame
     g.initializeGame();
-    g.printGameState();
+    if(g.getGameState().compare("_r_r_r_rr_r_r_r__r_r_r_r________________b_b_b_b__b_b_b_bb_b_b_b_1") != 0){
+        allTestsPassed = false;
+        qDebug() << "initializeGame not working";
+    }
+
+    //Testing updateGameState
+    g.initializeGame();
+    g.updateGameState("0213");
+    if(g.getGameState().compare("_r_r_r_rr_r_r_r__r_r_r_r_________b________b_b_b__b_b_b_bb_b_b_b_2") != 0){
+        allTestsPassed = false;
+        qDebug() << "updateGameState not working";
+    }
+    g.updateGameState("3524");
+    if(g.getGameState().compare("_r_r_r_rr_r_r_r__r___r_r__r______b________b_b_b__b_b_b_bb_b_b_b_1") != 0){
+        allTestsPassed = false;
+        qDebug() << "updateGameState not working";
+    }
+    g.setGameState("____________________________________r_________________r________b1");
+    g.updateGameState("7052");
+    if(g.getGameState().compare("____________________________________r________b__________________1") != 0){
+        allTestsPassed = false;
+        qDebug() << "updateGameState not working";
+    }
 
     return allTestsPassed;
 }
