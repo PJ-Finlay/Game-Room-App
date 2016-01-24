@@ -223,14 +223,32 @@ double CheckersGameState::competitivePosition(int player) const
     char otherMan;
     char otherKing;
     if(player == 1){
-
+        playerMan = 'b';
+        playerKing = 'B';
+        otherMan = 'r';
+        otherKing = 'R';
+    }else{
+        playerMan = 'r';
+        playerKing = 'R';
+        otherMan = 'b';
+        otherKing = 'B';
     }
 
 
     for(int y = 7; y >=0; y--){
         for(int x = 0; x < 8; x++){
+            char position = board[x][y];
+            if(position == playerMan) playerCount++;
+            if(position == playerKing) playerKing++;
+            if(position == otherMan) otherCount++;
+            if(position == otherKing) otherKingCount++;
 
         }
     }
 
+    int playerSum = playerCount + playerKing * 5;
+    int otherSum = otherCount + playerKing * 5;
+    int difference = playerSum - otherSum;
+
+    return ((double)difference) / 60;
 }
