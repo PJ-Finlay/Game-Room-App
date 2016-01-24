@@ -232,6 +232,14 @@ bool CheckersTests::testCheckersGameState()
         allTestsPassed = false;
         qDebug() << "updateGameState not working";
     }
+    g.setGameState("________b_______________________________________________________1");
+    g.updateGameState("0617");
+        g.printGameState();
+    if(g.getGameState().compare("____________________________________r________b__________________1") != 0){
+        allTestsPassed = false;
+        qDebug() << "updateGameState not working";
+    }
+
 
     return allTestsPassed;
 }

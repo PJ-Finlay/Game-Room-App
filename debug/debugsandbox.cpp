@@ -10,8 +10,16 @@
 
 void DebugSandbox::test()
 {
-    //CheckersTests::allTests();
+    unitests();
+}
+
+void DebugSandbox::cli()
+{
+    CLI::play();
+}
+
+void DebugSandbox::unitests()
+{
     TestDirectory::allTests();
-    //CLI::play();
 }
 

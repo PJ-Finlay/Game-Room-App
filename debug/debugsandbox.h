@@ -11,6 +11,10 @@ public:
      * @brief Where code being used in the DebugSandbox is put
      */
     static void test();
+
+private:
+    static void cli();
+    static void unitests();
 };
 
 #endif // DEBUGSANDBOX_H
