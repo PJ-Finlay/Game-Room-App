@@ -74,7 +74,12 @@ void CLI::playGame(std::shared_ptr<Game> gameToPlay)
                 message.append("Invalid Move\n");
             }
         }else{
-            gameState->makeMove(computerPlayer->getMoveFromGameState(gameState->getGameState()));
+            QString move = computerPlayer->getMoveFromGameState(gameState->getGameState());
+            if(gameState->isValidMove(move)) {
+                gameState->makeMove(move);
+            }else{
+                message.append("Invalid Move By Computer Player\n");
+            }
         }
     }
     //The game has now ended

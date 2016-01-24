@@ -159,6 +159,7 @@ QStringList CheckersGameState::validMovesForPiece(int x, int y) const
         }
     }
 
+
     toReturn.append(validCaptureMoves(x,y));
 
     return toReturn;
@@ -172,30 +173,27 @@ QStringList CheckersGameState::validCaptureMoves(int x, int y) const //Seperated
     if(board[x][y] == 'r' || board[x][y] == 'R'){
         direction = -1;
     }
-
     //Jumps
-    if(x > 0 && y+direction*2>=0 && y+direction*2<=7 && board[x-2][y+2] == '_'){ //Checks up/left for jump
+    if(x > 0 && y+direction*2>=0 && y+direction*2<=7 && board[x-2][y+2*direction] == '_'){ //Checks up/left for jump
         if(QString(board[x][y]).toLower().compare(QString(board[x-1][y+1*direction])) != 0 && board[x-1][y+1*direction] != '_')
             toReturn.append(QString::number(x) + QString::number(y) + QString::number(x-2) + QString::number(y+2*direction));
     }
-    if(x < 7 &&  y+direction*2>=0 && y+direction*2<=7  && board[x+2][y+2] == '_'){ //Checks up/right for jump
+    if(x < 7 &&  y+direction*2>=0 && y+direction*2<=7  && board[x+2][y+2*direction] == '_'){ //Checks up/right for jump
         if(QString(board[x][y]).toLower().compare(QString(board[x+1][y+1*direction])) != 0 && board[x+1][y+1*direction] != '_')
         toReturn.append(QString::number(x) + QString::number(y) + QString::number(x+2) + QString::number(y+2*direction));
     }
-
     //For kings
     if(board[x][y] == 'R' || board[x][y] == 'B'){ //If the piece is a king
         //Jumps
-        if(x > 0 && y-direction*2>=0 && y-direction*2<=7  && board[x-2][y-2] == '_'){ //Checks back/left for jump
+        if(x > 0 && y-direction*2>=0 && y-direction*2<=7  && board[x-2][y-2*direction] == '_'){ //Checks back/left for jump
             if(QString(board[x][y]).toLower().compare(QString(board[x-1][y-1*direction])) != 0 && board[x-1][y-1*direction] != '_')
             toReturn.append(QString::number(x) + QString::number(y) + QString::number(x-2) + QString::number(y-2*direction));
         }
-        if(x < 7 &&y-direction*2>=0 && y-direction*2<=7  && board[x+2][y-2] == '_'){ //Checks back/right for jump
+        if(x < 7 &&y-direction*2>=0 && y-direction*2<=7  && board[x+2][y-2*direction] == '_'){ //Checks back/right for jump
             if(QString(board[x][y]).toLower().compare(QString(board[x+1][y-1*direction])) != 0 && board[x+1][y-1*direction] != '_')
             toReturn.append(QString::number(x) + QString::number(y) + QString::number(x+2) + QString::number(y-2*direction));
         }
     }
-
     return toReturn;
 }
 
@@ -246,9 +244,9 @@ double CheckersGameState::competitivePosition(int player) const
         }
     }
 
-    int playerSum = playerCount + playerKing * 5;
-    int otherSum = otherCount + playerKing * 5;
+    int playerSum = playerCount + playerKing * 10;
+    int otherSum = otherCount + playerKing * 10;
     int difference = playerSum - otherSum;
 
-    return ((double)difference) / 60;
+    return ((double)difference) / 120;
 }
