@@ -58,62 +58,24 @@ void CheckersGameState::updateGameState(QString move){
     this->incrementTurn();
 }
 
-/**
- * @todo Not as efficient as it could be
- */
+
 int CheckersGameState::findWinners() const{
-    //This finds winners by testing the 8 possible win conditions, then testing for a tie
-
-    //Test the eight winning combinations
-
-    char winningChar = '_';
-    //Horizontal Rows
-    for(int i = 0; i < 3; i++){ //Loop through each row
-        char first = board[0][i];
-        if(board[1][i] == first && board[2][i] == first && first != '_'){
-            winningChar = first;
-        }
-    }
-    //Vertical Columns
-    for(int i = 0; i < 3; i++){ //Loop through each column
-        char first = board[i][0];
-        if(board[i][1] == first && board[i][2] == first && first != '_'){
-            winningChar = first;
-        }
-    }
-    //Diag
-    char middleChar = board[1][1];
-    if(board[0][2] == middleChar && board[2][0] == middleChar && middleChar != '_'){
-        winningChar = middleChar;
-    }
-    if(board[0][0] == middleChar && board[2][2] == middleChar && middleChar != '_'){
-        winningChar = middleChar;
-    }
-
-
-
-    if(winningChar == 'X'){
-        return 1;
-    }else if(winningChar == 'O'){
-        return 2;
-    }
-
-
-    //Test for a tie
-    bool blankSquareFound = false;
-    for(int i = 0; i < 3; i++){ //Loop through x coordinates of the board
-        for(int j = 0; j < 3; j++){//Loop through the y coordinates of the board
-            if(board[i][j] == '_'){
-                blankSquareFound = true;
+    bool player1CanMove = false;
+    bool player2CanMove = false;
+    for(int y = 7; y >=0; y--){
+        for(int x = 0; x < 8; x++){
+            if(board[x][y] == 'b' || board[x][y] == 'B'){
+                if(validMovesForPiece(x,y).size() > 0) player1CanMove = true;
+            }
+            if(board[x][y] == 'r' || board[x][y] == 'R'){
+                if(validMovesForPiece(x,y).size() > 0) player2CanMove = true;
             }
         }
     }
-    if(!blankSquareFound){
-        return 0;
-    }
-
-    //Game Continues
-    return -1;
+    if(player1CanMove && player2CanMove) return -1;
+    if(!player1CanMove && !player2CanMove) return 0;
+    if(!player1CanMove && player2CanMove) return 2;
+    if(player1CanMove && !player2CanMove) return 1;
 }
 
 QList<int> CheckersGameState::getValidNumberOfPlayers() const
