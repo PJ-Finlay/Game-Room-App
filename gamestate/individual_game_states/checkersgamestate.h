@@ -33,6 +33,7 @@ private:
     void incrementTurn();
     void deincrementTurn();
     QStringList validMovesForPiece(int x, int y) const;
+    QStringList validCaptureMoves(int x, int y) const;
 };
 
 #endif // CHECKERSGAMESTATE_H
