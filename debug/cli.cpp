@@ -62,8 +62,10 @@ void CLI::playGame(std::shared_ptr<Game> gameToPlay)
         cout << gameToPlay->getName().toStdString() << endl;
         gameState->printGameState();
         cout << endl;
-        cout << message.toStdString();
+        cout << message.toStdString() << endl;
         message = "";
+        cout << "Competative Position (1): " << gameState->competitivePosition(1) << endl;
+        cout << "Competative Position (2): " << gameState->competitivePosition(2) << endl;
 
         if(gameState->getTurn() == playAs || playAs == 0){
             string input;

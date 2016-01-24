@@ -212,7 +212,7 @@ void CheckersGameState::printGameState() const{
 double CheckersGameState::competitivePosition(int player) const
 {
     int playerCount = 0;
-    int playerKingCoung = 0;
+    int playerKingCount = 0;
     int otherCount = 0;
     int otherKingCount = 0;
 
@@ -237,16 +237,17 @@ double CheckersGameState::competitivePosition(int player) const
         for(int x = 0; x < 8; x++){
             char position = board[x][y];
             if(position == playerMan) playerCount++;
-            if(position == playerKing) playerKing++;
+            if(position == playerKing) playerKingCount++;
             if(position == otherMan) otherCount++;
             if(position == otherKing) otherKingCount++;
 
         }
     }
 
-    int playerSum = playerCount + playerKing * 10;
-    int otherSum = otherCount + playerKing * 10;
+    int playerSum = playerCount + (playerKingCount * 12);
+    int otherSum = otherCount + (otherKingCount * 12);
     int difference = playerSum - otherSum;
+    double dblDiff = (double) difference;
 
-    return ((double)difference) / 120;
+    return dblDiff / 144;
 }
