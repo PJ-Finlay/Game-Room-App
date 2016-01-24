@@ -1,6 +1,6 @@
 #include "checkers.h"
 
-#include "../../ai/computer_players/tictactoecomputerplayer.h"
+#include "../../ai/computer_players/checkerscomputerplayer.h"
 #include "../../gamestate/individual_game_states/checkersgamestate.h"
 
 Checkers::Checkers() : Game()
@@ -16,6 +16,6 @@ std::shared_ptr<GameState> Checkers::getGameState() const
 
 std::shared_ptr<ComputerPlayer> Checkers::getComputerPlayer() const
 {
-    std::shared_ptr<TicTacToeComputerPlayer> toReturn(new TicTacToeComputerPlayer());
+    std::shared_ptr<CheckersComputerPlayer> toReturn(new CheckersComputerPlayer());
     return toReturn;
 }

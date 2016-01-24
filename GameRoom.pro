@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     debug/unittests/gametests/checkerstests.cpp \
     debug/unittests/gametests/tictactoetests.cpp \
     gamestate/individual_game_states/checkersgamestate.cpp \
-    games/individual_game/checkers.cpp
+    games/individual_game/checkers.cpp \
+    ai/computer_players/checkerscomputerplayer.cpp
 
 
 
@@ -49,6 +50,7 @@ HEADERS  += \
     debug/unittests/gametests/checkerstests.h \
     debug/unittests/gametests/tictactoetests.h \
     gamestate/individual_game_states/checkersgamestate.h \
-    games/individual_game/checkers.h
+    games/individual_game/checkers.h \
+    ai/computer_players/checkerscomputerplayer.h
 
 CONFIG += c++11

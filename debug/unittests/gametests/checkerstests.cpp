@@ -3,12 +3,14 @@
 #include <QDebug>
 
 #include "../../../gamestate/individual_game_states/checkersgamestate.h"
+#include "../../../ai/computer_players/checkerscomputerplayer.h"
 
 bool CheckersTests::allTests()
 {
     bool allTestsPassed = true;
 
     if(!testCheckersGameState()) allTestsPassed = false;
+    if(!testCheckersComputerPlayer()) allTestsPassed = false;
 
     if(!allTestsPassed) qDebug() << "Checkers Failed";
 
@@ -234,12 +236,27 @@ bool CheckersTests::testCheckersGameState()
     }
     g.setGameState("________b_______________________________________________________1");
     g.updateGameState("0617");
-        g.printGameState();
-    if(g.getGameState().compare("____________________________________r________b__________________1") != 0){
+    if(g.getGameState().compare("_B______________________________________________________________2") != 0){
         allTestsPassed = false;
         qDebug() << "updateGameState not working";
     }
 
+    if(!allTestsPassed) qDebug() << "CheckersGameState failed";
+
+    return allTestsPassed;
+}
+
+bool CheckersTests::testCheckersComputerPlayer()
+{
+    bool allTestsPassed = true;
+
+    CheckersGameState g;
+    CheckersComputerPlayer c;
+    g.setGameState("____________r________b__________________________________________1");
+    g.printGameState();
+    qDebug() << c.getMoveFromGameState(g.getGameState());
+
+    if(!allTestsPassed) qDebug() << "CheckersComputerPlayer failed";
 
     return allTestsPassed;
 }

@@ -10,6 +10,7 @@
 
 void DebugSandbox::test()
 {
+    //cli();
     unitests();
 }
 
