@@ -11,9 +11,15 @@ CheckersGameState::CheckersGameState() : GameState()
 }
 
 void CheckersGameState::initializeGame(){
-    for(int i = 0; i < 8; i++){ //Loop through x coordinates of the board
-        for(int j = 0; j < 8; j++){//Loop through the y coordinates of the board
-            this->board[i][j] = '_';
+    for(int y = 7; y >= 0; y--){
+        for(int x = 0; x < 8; x++){
+            if(y > 4 && (x % 2 == 0 + y % 2) % 2 == 1){ //Top of the board
+                   board[x][y] = 'r';
+            }else if(y < 3 && (x % 2 == 0 + y % 2) % 2 == 1){ //Bottom of the board
+                board[x][y] = 'b';
+            }else{
+                board[x][y] = '_';
+            }
         }
     }
     playerTurn = 1;
