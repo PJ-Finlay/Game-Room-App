@@ -27,13 +27,6 @@ bool CheckersTests::testCheckersGameState()
         qDebug() << "Getting or setting turn not working correctly";
     }
 
-    //Test initialize game
-    g.initializeGame();
-    if(g.getGameState().compare("________________________________________________________________1") !=0 ){
-        allTestsPassed = false;
-        qDebug() << "Initialize Game or getGameState not working correctly";
-    }
-
     //Test setGameState and getGameState
     g.setGameState(QString("____________________________r______b_____r_b____________________1"));
     if(g.getGameState().compare("____________________________r______b_____r_b____________________1") != 0){
@@ -57,7 +50,7 @@ bool CheckersTests::testCheckersGameState()
     }
 
     //Testing findValidMoves
-    g.initializeGame();
+    g.setGameState("________________________________________________________________1");
     if(g.findValidMoves().join(",").compare("") != 0){
         allTestsPassed = false;
         qDebug() << "findValidMoves not working correctly";
@@ -213,6 +206,10 @@ bool CheckersTests::testCheckersGameState()
         allTestsPassed = false;
         qDebug() << "findWinners not working correctly";
     }
+
+    //Testing initializeGame
+    g.initializeGame();
+    g.printGameState();
 
     return allTestsPassed;
 }
