@@ -243,6 +243,20 @@ bool CheckersTests::testCheckersGameState()
         qDebug() << "updateGameState not working";
     }
 
+    //Testing competitivePosition
+    g.setGameState("________b_______________________________________________________1");
+    if(abs(g.competitivePosition(1) - .01666) > 0.11){
+        allTestsPassed = false;
+        qDebug() << "competitive not working";
+    }
+    g.setGameState("________R______________________________b________________________2");
+    if(abs(g.competitivePosition(1) - .066666) > 0.11){
+        allTestsPassed = false;
+        qDebug() << "competitive not working";
+    }
+
+
+
     if(!allTestsPassed) qDebug() << "CheckersGameState failed";
 
     return allTestsPassed;
