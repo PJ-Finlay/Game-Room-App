@@ -59,6 +59,12 @@ void CheckersGameState::updateGameState(QString move){
         board[(startX+endX)/2][(startY+endY)/2] = '_'; //remove the jumped piece
         if(validCaptureMoves(endX,endY).size() > 0) incrementTurn();//deincrement the turn  because the player gets to go again
     }
+
+    //If a piece reaches the end make it a king
+    if(endY == 0 || endY == 7){
+        if(board[endX][endY] == 'b') board[endX][endY] = 'B';
+        if(board[endX][endY] == 'r') board[endX][endY] = 'R';
+    }
 }
 
 

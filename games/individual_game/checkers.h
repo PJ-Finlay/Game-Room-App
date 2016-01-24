@@ -1,20 +1,19 @@
-#ifndef TICTACTOE_H
-#define TICTACTOE_H
+#ifndef CHECKERS_H
+#define CHECKERS_H
 
 #include "../game.h"
 
 #include <memory>
 
 /**
- * @brief Represents a Game of TicTacToe
+ * @brief Represents a game of Checkers
  */
-class TicTacToe : public Game
+class Checkers : public Game
 {
 public:
-    TicTacToe();
+    Checkers();
     virtual std::shared_ptr<GameState> getGameState() const;
     virtual std::shared_ptr<ComputerPlayer> getComputerPlayer() const;
-
 };
 
-#endif // TICTACTOE_H
+#endif // CHECKERS_H
