@@ -172,5 +172,47 @@ bool CheckersTests::testCheckersGameState()
         qDebug() << "findValidMoves not working correctly";
     }
 
+    //Test findWinners
+    g.setGameState("________________________________________________________________2");
+    if(g.findWinners() != 0){
+        allTestsPassed = false;
+        qDebug() << "findWinners not working correctly";
+    }
+    g.setGameState("_________________________b______________________________________2");
+    if(g.findWinners() != 1){
+        allTestsPassed = false;
+        qDebug() << "findWinners not working correctly";
+    }
+    g.setGameState("_________________________b______________________________________1");
+    if(g.findWinners() != 1){
+        allTestsPassed = false;
+        qDebug() << "findWinners not working correctly";
+    }
+    g.setGameState("_________________________r______________________________________1");
+    if(g.findWinners() != 2){
+        allTestsPassed = false;
+        qDebug() << "findWinners not working correctly";
+    }
+    g.setGameState("_________________________R______________________________________1");
+    if(g.findWinners() != 2){
+        allTestsPassed = false;
+        qDebug() << "findWinners not working correctly";
+    }
+    g.setGameState("_________________________B______________________________________1");
+    if(g.findWinners() != 1){
+        allTestsPassed = false;
+        qDebug() << "findWinners not working correctly";
+    }
+    g.setGameState("_________________________R_____________B________________________1");
+    if(g.findWinners() != -1){
+        allTestsPassed = false;
+        qDebug() << "findWinners not working correctly";
+    }
+    g.setGameState("_________________________R______________________RRBbr___________1");
+    if(g.findWinners() != -1){
+        allTestsPassed = false;
+        qDebug() << "findWinners not working correctly";
+    }
+
     return allTestsPassed;
 }
