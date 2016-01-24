@@ -26,6 +26,7 @@ public:
     int getTurn() const;
     QStringList findValidMoves() const;
     void printGameState() const;
+    double competitivePosition(int player) const;
 
 private:
     char board[8][8];

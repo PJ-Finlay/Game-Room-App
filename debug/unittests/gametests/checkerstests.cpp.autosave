@@ -241,7 +241,7 @@ bool CheckersTests::testCheckersGameState()
     if(g.getGameState().compare("_B______________________________________________________________2") != 0){
         allTestsPassed = false;
         qDebug() << "updateGameState not working";
-    }
+    }'
 
     if(!allTestsPassed) qDebug() << "CheckersGameState failed";
 

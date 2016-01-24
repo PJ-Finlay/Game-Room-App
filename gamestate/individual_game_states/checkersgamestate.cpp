@@ -210,3 +210,27 @@ void CheckersGameState::printGameState() const{
         std::cout << line.toStdString() << std::endl;
     }
 }
+
+double CheckersGameState::competitivePosition(int player) const
+{
+    int playerCount = 0;
+    int playerKingCoung = 0;
+    int otherCount = 0;
+    int otherKingCount = 0;
+
+    char playerMan;
+    char playerKing;
+    char otherMan;
+    char otherKing;
+    if(player == 1){
+
+    }
+
+
+    for(int y = 7; y >=0; y--){
+        for(int x = 0; x < 8; x++){
+
+        }
+    }
+
+}
