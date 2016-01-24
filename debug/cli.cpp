@@ -43,7 +43,7 @@ void CLI::play()
 void CLI::playGame(std::shared_ptr<Game> gameToPlay)
 {
     clearScreen();
-    cout << "What player do you want to play as?" << endl << endl << "0 - All" << endl << "n -Specific Player" << endl;
+    cout << "What player do you want to play as?" << endl << endl << "0 - All" << endl << "n - Specific Player" << endl;
     int playAs;
     cin >> playAs;
 
