@@ -9,7 +9,7 @@ public:
     static QString pickMove(GameState* gamestate);
 
 private:
-    static double getValueOfMove(GameState* gamestate, QString move);
+    static double getValueOfMove(GameState* gamestate, QString move, int maxDepth = 4, int currentDepth = 0);
 };
 
 #endif // MINIMAX_H

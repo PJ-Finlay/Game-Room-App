@@ -5,9 +5,9 @@
 
 QString CheckersComputerPlayer::getMoveFromGameState(QString gamestate) const
 {
-    CheckersGameState g;
-    g.setGameState(gamestate);
+    CheckersGameState* g = new CheckersGameState;
+    g->setGameState(gamestate);
 
-    return Minimax::pickMove(&g);
+    return Minimax::pickMove(g);
 
 }
