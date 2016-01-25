@@ -13,7 +13,14 @@ public:
     static void test();
 
 private:
+    /**
+     * @brief Runs the CLI
+     */
     static void cli();
+
+    /**
+     * @brief Runs all of the unit tests
+     */
     static void unitests();
 };
 
