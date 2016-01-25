@@ -3,8 +3,8 @@
 #include <QDebug>
 #include <QString>
 
-#include "../../ai/algorithms/minimax.h"
-#include "../../gamestate/individual_game_states/tictactoegamestate.h"
+#include "../../../ai/algorithms/minimax.h"
+#include "../../../gamestate/individual_game_states/tictactoegamestate.h"
 
 bool AIAlgorithmTester::testMinimax()
 {

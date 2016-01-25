@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <QStringList>
 
-#include "../../gamestate/individual_game_states/tictactoegamestate.h"
+#include "../../../gamestate/individual_game_states/tictactoegamestate.h"
 
 bool TicTacToeTests::allTests()
 {
