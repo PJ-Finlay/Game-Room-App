@@ -9,6 +9,9 @@
 //AI Algorithms
 #include "aialgorithm/aialgorithmtester.h"
 
+//Other Tests
+#include "othertest/othertests.h"
+
 void TestDirectory::allTests()
 {
     bool allTestsPassed = true;
@@ -16,6 +19,8 @@ void TestDirectory::allTests()
     if(!TestDirectory::allGames()) allTestsPassed = false;
 
     if(!TestDirectory::allAIAlgorithms()) allTestsPassed = false;
+
+    if(!TestDirectory::otherTests()) allTestsPassed = false;
 
     if(allTestsPassed){
         qDebug() << "All Tests Passed";
@@ -41,6 +46,17 @@ bool TestDirectory::allAIAlgorithms()
     if(!AIAlgorithmTester::testMinimax()) allTestsPassed = false;
 
     if(!allTestsPassed) qDebug() << "AI Algorithms Failed";
+
+    return allTestsPassed;
+}
+
+bool TestDirectory::otherTests()
+{
+    bool allTestsPassed = true;
+
+    if(!OtherTests::allTests()) allTestsPassed = false;
+
+    if(!allTestsPassed) qDebug() << "Other tests failed";
 
     return allTestsPassed;
 }
