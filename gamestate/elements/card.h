@@ -47,13 +47,13 @@ public:
      * @brief Gets the suit of a card
      * @return The suit of the card. For example for the King of Hearts this would return H
      */
-    QString getSuit();
+    QString getSuit() const;
 
     /**
      * @brief Gets the value of the card.
      * @return The value fo the card. For example for the King of Hearts this would return K, and the 10 of Spades would return 10
      */
-    QString getValue();
+    QString getValue() const;
 
     /**
      * @brief Gets an int value for the card from 1-14. Numbers return their own value so the 2 of Spades would return 2.
@@ -61,25 +61,25 @@ public:
      * If aces are high A->14, if they are not A->1
      * @return The int value of the card
      */
-    int getIntValue();
+    int getIntValue() const;
 
     /**
      * @brief Gets the long suit of a card
      * @return The long suit of a card. For example for the King of Spades this would return "Spades"
      */
-    QString getLongSuit();
+    QString getLongSuit() const;
 
     /**
      * @brief Gets the long value of card.
      * @return The long value of a card for example for the King of Spades it would return "King", and for the 10 of Spades it would return "10"
      */
-    QString getLongValue();
+    QString getLongValue() const;
 
     /**
      * @brief Gets the String value of a card
      * @return The QString value of a card. For the King of Spades this would return "King of Spades"
      */
-    QString toString();
+    QString toString() const;
 
 private:
     QString id;
