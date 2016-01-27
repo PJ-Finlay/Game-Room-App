@@ -24,6 +24,12 @@ public:
      * @return If all of the tests were passed
      */
     static bool allAIAlgorithms();
+
+    /**
+     * @brief Runs all of the other tests that don't fit well into a category
+     * @return If all of the tests were passed
+     */
+    static bool otherTests();
 };
 
 #endif // TESTDIRECTORY_H
