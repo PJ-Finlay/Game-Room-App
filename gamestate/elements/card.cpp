@@ -26,17 +26,17 @@ void Card::setAcesHigh(bool value)
     acesHigh = value;
 }
 
-QString Card::getSuit()
+QString Card::getSuit() const
 {
     return id.right(1);
 }
 
-QString Card::getValue()
+QString Card::getValue() const
 {
     return id.left(id.length() - 1);
 }
 
-int Card::getIntValue()
+int Card::getIntValue() const
 {
     QString value = getValue();
     if(value.compare("J") == 0) return 11;
@@ -49,7 +49,7 @@ int Card::getIntValue()
     }
 }
 
-QString Card::getLongValue()
+QString Card::getLongValue() const
 {
     QString toReturn = getValue();
     if(toReturn.compare("J") == 0) return "Jack";
@@ -59,7 +59,7 @@ QString Card::getLongValue()
     return toReturn;
 }
 
-QString Card::getLongSuit()
+QString Card::getLongSuit() const
 {
     QString suit = getSuit();
     if(suit.compare("H") == 0) return "Hearts";
@@ -69,7 +69,7 @@ QString Card::getLongSuit()
     return "Undefined Suit";
 }
 
-QString Card::toString()
+QString Card::toString() const
 {
     return getLongValue() + " of " + getLongSuit();
 }

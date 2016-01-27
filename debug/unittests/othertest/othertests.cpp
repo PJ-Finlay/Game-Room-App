@@ -1,8 +1,12 @@
 #include "othertests.h"
 
 #include <QDebug>
+#include <iostream>
 
 #include "../../../gamestate/elements/card.h"
+#include "../../../gamestate/elements/deck.h"
+
+using namespace std;
 
 bool OtherTests::allTests(){
     bool allTestsPassed = true;
@@ -107,10 +111,18 @@ bool OtherTests::testCard()
         allTestsPassed = false;
     }
 
+    if(!allTestsPassed) qDebug() << "Card Failed";
+
     return allTestsPassed;
 }
 
 bool OtherTests::testDeck()
 {
-    return true;
+    bool allTestsPassed = true;
+
+    //Currently no unit tests
+
+
+    if(!allTestsPassed) qDebug() << "Deck Failed";
+    return allTestsPassed;
 }
