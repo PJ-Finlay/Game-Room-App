@@ -45,10 +45,10 @@ void CheckersGameState::setGameState(QString gameState){
 }
 
 void CheckersGameState::updateGameState(QString move){
-    int startX = move.midRef(0,1).toInt();
-    int startY = move.midRef(1,1).toInt();
-    int endX = move.midRef(2,1).toInt();
-    int endY = move.midRef(3,1).toInt();
+    int startX = move.mid(0,1).toInt();
+    int startY = move.mid(1,1).toInt();
+    int endX = move.mid(2,1).toInt();
+    int endY = move.mid(3,1).toInt();
     board[endX][endY] = board[startX][startY];
     board[startX][startY] = '_';
 
