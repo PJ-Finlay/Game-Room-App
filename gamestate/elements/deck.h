@@ -26,7 +26,8 @@ public:
      * @brief Makes a Deck based on a String preset
      * @param preset The preset to be used
      */
-    Deck(QString preset);
+    //Deck(QString preset);
+    //To be implemented
 
     /**
      * @brief Get the QList of Cards in the Deck

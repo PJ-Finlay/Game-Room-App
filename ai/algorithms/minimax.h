@@ -17,9 +17,6 @@ public:
     static QString pickMove(GameState* gamestate);
 
 private:
-<<<<<<< HEAD
-    static double getValueOfMove(GameState* gamestate, QString move, int maxDepth = 5, int currentDepth = 0);
-=======
     /**
      * @brief Finds the value of a move between -1 and 1 of a  move that can be made on a GameState
      * @param gamestate The gamestate to be evaluated
@@ -29,7 +26,6 @@ private:
      * @return
      */
     static double getValueOfMove(GameState* gamestate, QString move, int maxDepth = 4, int currentDepth = 0);
->>>>>>> 28647dabb045b6dba3d00317afd182e45ad49d22
 };
 
 #endif // MINIMAX_H
