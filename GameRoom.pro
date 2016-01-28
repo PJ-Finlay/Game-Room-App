@@ -49,7 +49,6 @@ HEADERS  += \
     ai/computer_players/computerplayer.h \
     ai/computer_players/tictactoecomputerplayer.h \
     debug/cli.h \
-    games/game_type/cardgame.h \
     debug/unittests/gametests/checkerstests.h \
     debug/unittests/gametests/tictactoetests.h \
     gamestate/individual_game_states/checkersgamestate.h \

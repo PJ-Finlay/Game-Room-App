@@ -3,8 +3,9 @@
 
 #include "computerplayer.h"
 
-#include <QString>
-
+/**
+ * @brief The TicTacToeComputerPlayer class is the ComputerPlayer for TicTacToe
+ */
 class TicTacToeComputerPlayer : public ComputerPlayer
 {
 public:
