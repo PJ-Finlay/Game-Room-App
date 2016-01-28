@@ -1,18 +1,17 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2015-11-21T11:49:29
-#
-#-------------------------------------------------
+QT += core gui
+QT += widgets
 
-QT       += core gui
 CONFIG += c++11
-
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = GameRoom
 TEMPLATE = app
 
+release: DESTDIR = ../gameroom_build/release
+debug:   DESTDIR = ../gameroom_build/debug
+OBJECTS_DIR = $$DESTDIR/.obj
+MOC_DIR = $$DESTDIR/.moc
+RCC_DIR = $$DESTDIR/.qrc
+UI_DIR = $$DESTDIR/.ui
 
 SOURCES += main.cpp\
     games/game.cpp \
@@ -34,9 +33,8 @@ SOURCES += main.cpp\
     ai/computer_players/checkerscomputerplayer.cpp \
     debug/unittests/othertest/othertests.cpp \
     gamestate/elements/deck.cpp \
-    gamestate/elements/card.cpp
-
-
+    gamestate/elements/card.cpp \
+    gamestate/individual_game_states/heartsgamestate.cpp
 
 HEADERS  += \
     games/game.h \
@@ -59,9 +57,5 @@ HEADERS  += \
     ai/computer_players/checkerscomputerplayer.h \
     debug/unittests/othertest/othertests.h \
     gamestate/elements/deck.h \
-    gamestate/elements/card.h
-
-CONFIG += c++11
-
-
-
+    gamestate/elements/card.h \
+    gamestate/individual_game_states/heartsgamestate.h
