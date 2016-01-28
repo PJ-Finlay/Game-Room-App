@@ -48,11 +48,9 @@ double Minimax::getValueOfMove(GameState* gamestate, QString move, int maxDepth,
     //Find the value of the opponents best move
     QStringList moves = gamestate->findValidMoves();
     double bestMove = -1;
-    int bestMoveIndex = 0;
     for(int i = 0; i < moves.size(); i++){
         int valueOfMove = getValueOfMove(gamestate,moves.at(i), maxDepth, currentDepth + 1);
         if(valueOfMove > bestMove){
-            bestMoveIndex = i;
             bestMove = valueOfMove;
         }
     }
