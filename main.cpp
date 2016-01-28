@@ -15,7 +15,9 @@
 #include "debug/debugsandbox.h"
 #endif
 
-int main(int argc, char *argv[])
+//Removed to supress compiler error
+//int main(int argc, char *argv[])
+int main()
 {
 #ifdef SANDBOXBUILD // Runs the test method of the DebugSandbox if SANDBOXBUILD is enabled
     DebugSandbox::test();

@@ -85,6 +85,8 @@ int CheckersGameState::findWinners() const{
     if(!player1CanMove && !player2CanMove) return 0;
     if(!player1CanMove && player2CanMove) return 2;
     if(player1CanMove && !player2CanMove) return 1;
+
+    return 0; //This should never happen
 }
 
 QList<int> CheckersGameState::getValidNumberOfPlayers() const

@@ -10,7 +10,7 @@ QString Minimax::pickMove(GameState* gamestate)
     int bestMoveIndex = 0;
     for(int i = 0; i < moves.size(); i++){
     //for(int i = moves.size() - 1; i >= 0; i--){
-      int valueOfMove = getValueOfMove(gamestate,moves.at(i));
+      int valueOfMove = Minimax::getValueOfMove(gamestate,moves.at(i));
       if(valueOfMove > bestMove){
           bestMoveIndex = i;
           bestMove = valueOfMove;

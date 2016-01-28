@@ -14,11 +14,6 @@ Deck::Deck()
     this->cards = QList<Card>();
 }
 
-Deck::Deck(QString preset)
-{
-    this->cards = QList<Card>();
-}
-
 QList<Card> Deck::getCards() const
 {
     return cards;
@@ -73,4 +68,3 @@ QString Deck::toString()
     }
     return toReturn;
 }
-
