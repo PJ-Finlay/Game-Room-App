@@ -3,6 +3,10 @@
 
 #include "computerplayer.h"
 
+/**
+ * @brief The CheckersComputerPlayer class is the ComputerPlayer for Checkers.
+ * It uses the Minimax algorithm
+ */
 class CheckersComputerPlayer : public ComputerPlayer
 {
 public:
