@@ -23,11 +23,11 @@ public:
     Deck();
 
     /**
-     * @brief Makes a Deck based on a String preset
+     * @brief Makes a Deck based on a String preset.
+     * Standard - Standard 52 no joker deck
      * @param preset The preset to be used
      */
-    //Deck(QString preset);
-    //To be implemented
+    Deck(QString preset);
 
     /**
      * @brief Get the QList of Cards in the Deck
@@ -76,6 +76,12 @@ public:
      * @return The card at the index
      */
     Card takeCardFromIndex(int index);
+
+    /**
+     * @brief Takes a card from the top of the Deck. The card is removed.
+     * @return The card that was taken
+     */
+    Card takeCardFromTop();
 
     /**
      * @brief Shuffles the Deck into a random order

@@ -6,8 +6,8 @@ CONFIG += c++11
 TARGET = GameRoom
 TEMPLATE = app
 
-release: DESTDIR = ../gameroom_build/release
-debug:   DESTDIR = ../gameroom_build/debug
+release: DESTDIR = release
+debug:   DESTDIR = debug
 OBJECTS_DIR = $$DESTDIR/.obj
 MOC_DIR = $$DESTDIR/.moc
 RCC_DIR = $$DESTDIR/.qrc
@@ -34,7 +34,10 @@ SOURCES += main.cpp\
     debug/unittests/othertest/othertests.cpp \
     gamestate/elements/deck.cpp \
     gamestate/elements/card.cpp \
-    gamestate/individual_game_states/heartsgamestate.cpp
+    gamestate/individual_game_states/heartsgamestate.cpp \
+    debug/unittests/gametests/heartstests.cpp \
+    gamestate/game_state_types/trickbasedgamestate.cpp \
+    debug/unittests/gametests/trickbasedgametests.cpp
 
 HEADERS  += \
     games/game.h \
@@ -57,4 +60,7 @@ HEADERS  += \
     debug/unittests/othertest/othertests.h \
     gamestate/elements/deck.h \
     gamestate/elements/card.h \
-    gamestate/individual_game_states/heartsgamestate.h
+    gamestate/individual_game_states/heartsgamestate.h \
+    debug/unittests/gametests/heartstests.h \
+    gamestate/game_state_types/trickbasedgamestate.h \
+    debug/unittests/gametests/trickbasedgametests.h

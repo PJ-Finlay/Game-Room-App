@@ -14,6 +14,32 @@ Deck::Deck()
     this->cards = QList<Card>();
 }
 
+Deck::Deck(QString preset)
+{
+    this->cards = QList<Card>();
+    if(preset.compare("Standard") == 0){
+        for(int s = 0; s < 4; s++){
+            for(int v = 1; v <= 13; v++){
+                QString suit;
+                QString value;
+                if(s == 0) suit = "H";
+                if(s == 1) suit = "D";
+                if(s == 2) suit = "C";
+                if(s == 3) suit = "S";
+
+                value = QString::number(v);
+                if(v == 1) value = "A";
+                if(v == 13) value = "K";
+                if(v == 12) value = "Q";
+                if(v == 11) value = "J";
+
+
+                addCardtoTop(Card(value+suit, true));
+            }
+        }
+    }
+}
+
 QList<Card> Deck::getCards() const
 {
     return cards;
@@ -47,6 +73,11 @@ Card Deck::getCardFromIndex(int index)
 Card Deck::takeCardFromIndex(int index)
 {
     return cards.takeAt(index);
+}
+
+Card Deck::takeCardFromTop()
+{
+    return takeCardFromIndex(0);
 }
 
 void Deck::shuffle()
