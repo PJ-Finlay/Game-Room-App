@@ -36,8 +36,7 @@ SOURCES += main.cpp\
     gamestate/elements/card.cpp \
     gamestate/individual_game_states/heartsgamestate.cpp \
     debug/unittests/gametests/heartstests.cpp \
-    gamestate/game_state_types/trickbasedgamestate.cpp \
-    debug/unittests/gametests/trickbasedgametests.cpp
+    gamestate/game_state_types/trickbasedgamestate.cpp
 
 HEADERS  += \
     games/game.h \
@@ -62,5 +61,4 @@ HEADERS  += \
     gamestate/elements/card.h \
     gamestate/individual_game_states/heartsgamestate.h \
     debug/unittests/gametests/heartstests.h \
-    gamestate/game_state_types/trickbasedgamestate.h \
-    debug/unittests/gametests/trickbasedgametests.h
+    gamestate/game_state_types/trickbasedgamestate.h

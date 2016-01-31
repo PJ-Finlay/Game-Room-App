@@ -4,7 +4,7 @@
 
 
 
-TrickBasedGameState::TrickBasedGameState()
+TrickBasedGameState::TrickBasedGameState() : GameState()
 {
     gameState = "";
 
@@ -26,6 +26,19 @@ TrickBasedGameState::TrickBasedGameState()
 
     moveRecord = QList<QString>();
 
+}
+
+
+
+void TrickBasedGameState::clearGameState()
+{
+    setMode(0);
+    setOtherInfo("");
+    setPlayerScore(1,0);
+    setPlayerScore(2,0);
+    setPlayerScore(3,0);
+    setPlayerScore(4,0);
+    dealHand();
 }
 
 int TrickBasedGameState::getMode() const
@@ -100,18 +113,7 @@ void TrickBasedGameState::dealHand()
         }
         startingHands.append(hand);
     }
-}
-
-
-void TrickBasedGameState::initializeGame()
-{
-    setMode(0);
-    setOtherInfo("R");
-    setPlayerScore(1,0);
-    setPlayerScore(2,0);
-    setPlayerScore(3,0);
-    setPlayerScore(4,0);
-    dealHand();
+    clearMoveRecord();
 }
 
 //0-R-|13|0|7|6|-AS,QS|JC,KD|2D,3D|5C,8C-2C,JC
@@ -145,4 +147,49 @@ QString TrickBasedGameState::getGameState() const
         if(i != moveRecord.size() -1) toReturn.append(",");
     }
     return toReturn;
+}
+
+void TrickBasedGameState::setGameState(QString value)
+{
+    //Get Mode
+    setMode(value.left(value.indexOf("-")).toInt());
+    value = value.right(value.length() - value.indexOf("-") - 1);
+
+    //Get other info
+    setOtherInfo(value.left(value.indexOf("-")));
+    value = value.right(value.length() - value.indexOf("-") - 2);
+
+    //Get player scores
+    for(int i = 0; i < 4; i++){
+        setPlayerScore(i + 1 , value.left(value.indexOf("|")).toInt());
+        value = value.right(value.length() - value.indexOf("|") - 1);
+    }
+    value = value.right(value.length() - value.indexOf("-") - 1);
+
+    //Get starting hands
+    QList<QList<QString>> startingHands;
+    for(int i = 0; i < 4; i++){
+        QList<QString> hand;
+        if(i != 3) hand.append(value.left(value.indexOf("|")));
+        if(i == 3) hand.append(value.left(value.indexOf("-") - 1));
+        value = value.right(value.length() - value.indexOf("|") - 1);
+        startingHands.append(hand);
+    }
+    setStartingHands(startingHands);
+    value = value.right(value.length() - value.indexOf("-") - 1);
+
+    //Get Move Record
+    clearMoveRecord();
+    bool keepLooping = true;
+    while(keepLooping){
+        if(value.indexOf(",") != -1){
+            addToMoveRecord(value.left(value.indexOf(",")));
+            value = value.right(value.length() - value.indexOf(",") - 1);
+        }else{
+            addToMoveRecord(value);
+            keepLooping = false;
+        }
+    }
+
+
 }

@@ -2,52 +2,13 @@
 
 #include <QDebug>
 
-HeartsGameState::HeartsGameState() : GameState()
+HeartsGameState::HeartsGameState() : TrickBasedGameState()
 {
     playerTurn = 1;
 }
 
 void HeartsGameState::initializeGame(){
-    for(int i = 0; i < 3; i++){ //Loop through x coordinates of the board
-        for(int j = 0; j < 3; j++){//Loop through the y coordinates of the board
-            board[i][j] = '_';
-        }
-    }
-    playerTurn = 1;
-}
-
-QString HeartsGameState::getGameState() const{
-    QString toReturn;
-    toReturn.append(board[0][2]);
-    toReturn.append(board[1][2]);
-    toReturn.append(board[2][2]);
-    toReturn.append(board[0][1]);
-    toReturn.append(board[1][1]);
-    toReturn.append(board[2][1]);
-    toReturn.append(board[0][0]);
-    toReturn.append(board[1][0]);
-    toReturn.append(board[2][0]);
-    return toReturn;
-}
-
-void HeartsGameState::setGameState(QString gameState){
-    for(int i = 0; i < 9; i++){ //loop through the gameState string's characters
-        board[i % 3][2 - (i / 3)] = gameState.at(i).toLatin1();
-    }
-
-    //Figure out which player's turn it is
-    int xCount = 0;
-    int oCount = 0;
-    for(int i = 0; i < 9; i++){ //loop through the gameState string's characters
-        if(gameState.at(i).toLatin1() == 'X') xCount++;
-        if(gameState.at(i).toLatin1() == 'O') oCount++;
-    }
-    if(xCount == oCount){
-        playerTurn = 1;
-    }else{
-        playerTurn = 2;
-    }
-
+    clearGameState();
 }
 
 void HeartsGameState::updateGameState(QString move){

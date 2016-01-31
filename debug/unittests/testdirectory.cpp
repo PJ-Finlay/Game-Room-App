@@ -5,7 +5,6 @@
 //Games
 #include "gametests/tictactoetests.h"
 #include "gametests/checkerstests.h"
-#include "gametests/trickbasedgametests.h"
 #include "gametests/heartstests.h"
 
 //AI Algorithms
@@ -36,7 +35,6 @@ bool TestDirectory::allGames()
     if(!TicTacToeTests::allTests()) allTestsPassed = false;
     if(!CheckersTests::allTests()) allTestsPassed = false;
     if(!HeartsTests::allTests()) allTestsPassed = false;
-    if(!TrickBasedGameTests::allTests()) allTestsPassed = false;
 
     if(!allTestsPassed) qDebug() << "Games Failed";
 
