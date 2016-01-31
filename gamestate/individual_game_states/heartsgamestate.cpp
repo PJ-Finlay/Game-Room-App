@@ -12,28 +12,25 @@ void HeartsGameState::initializeGame(){
 }
 
 void HeartsGameState::updateGameState(QString move){
-    //Parse String
-    int x = move.mid(0,1).toInt();
-    int y = move.mid(1,1).toInt();
-
-    //Find the right piece to play
-    char pieceToPlace;
-    if(playerTurn == 1){
-        pieceToPlace = 'X';
-    }else{
-        pieceToPlace = 'O';
+    int mode = getMode();
+    if(mode == 0){ //Passing Mode
+        addToMoveRecord(move);
+        QList<QList<QString>> hands = getPlayerHands();
+        int from = getTurn();
+        int to = findPlayerToPassTo(from);
+        QList<QString> fromHand = hands.at(from -1);
+        QList<QString> toHand = hands.at(to - 1);
+        QList<QString> passedCards = move.split("|");
+        for(int i = 0; i < passedCards.size(); i++){
+            QString card = passedCards.at(i);
+            fromHand.removeAt(fromHand.indexOf(card));
+            toHand.append(card);
+        }
+        hands.replace(from,fromHand);
+        hands.replace(to,toHand);
     }
-
-    //Place that piece
-    board[x][y] = pieceToPlace;
-
-    //Increment the turn
-    this->incrementTurn();
 }
 
-/**
- * @todo Not as efficient as it could be
- */
 int HeartsGameState::findWinners() const{
     //This finds winners by testing the 8 possible win conditions, then testing for a tie
 
@@ -92,7 +89,7 @@ int HeartsGameState::findWinners() const{
 QList<int> HeartsGameState::getValidNumberOfPlayers() const
 {
     QList<int> toReturn;
-    toReturn.append(2);
+    toReturn.append(4);
     return toReturn;
 
 }
@@ -134,7 +131,26 @@ QStringList HeartsGameState::findValidMoves() const
 }
 
 void HeartsGameState::printGameState() const{
-    qDebug() << board[0][2] << board[1][2] << board[2][2];
-    qDebug() << board[0][1] << board[1][1] << board[2][1];
-    qDebug() << board[0][0] << board[1][0] << board[2][0];
+    //TrickBasedGameState::printGameState();
+
+}
+
+int HeartsGameState::findPlayerToPassTo(int player)
+{
+    QString passingMode = getOtherInfo();
+    if(passingMode.compare("R") == 0){
+        if(player > 1) return player - 1;
+        return 4;
+    }
+    if(passingMode.compare("L") == 0){
+        if(player < 4) return player + 1;
+        return 1;
+    }
+    if(passingMode.compare("A") == 0){
+        if(player == 1) return 3;
+        if(player == 2) return 4;
+        if(player == 3) return 1;
+        if(player == 4) return 2;
+    }
+    return player;
 }

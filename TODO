@@ -1,3 +1,5 @@
+-Short Term TODO-
+
 Improve Minimax
 Figure Out how to cross compile
 CheckersGameState should be broken up into an 8x8 grid GameState for Chess/Checkers, or gridded game in general
@@ -6,4 +8,11 @@ Consider Creating a superclass that would encompase all grid board games (Chess,
 Make CLI more powerful (undo, step through computer played game)
 Unify when it is printed when test failed
 
+
+- Know Bugs -
+
+
+
+- Long Term TODO -
+Add difficulty
 

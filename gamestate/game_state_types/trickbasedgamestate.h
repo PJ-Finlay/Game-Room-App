@@ -9,16 +9,16 @@
 
 /**
  * @brief Represents a trick based game
- * Internally the game is represented as the same QString that it uses to interface externally.
  * Game State String Format:
  * Mode(Integer)(Game Dependant)-OtherInfo(Dealer/Pass Direction)-Player1Score|Player2Score|Player3Score|Player4Score-Player1StartingHand(,Seperated)|Player2Hand|Player3Hand|Player4Hand-Coma seperated move record
- * Move notation:
- * Playing Card - CardID
- * Passing Cards - CardIDs (| seperated)
+ * If there are moves made before or after the trick taking part of the game these are seperated by a * move.
+ * Note: If you use a * move you must include a * move on both sides of the trick moves
+ * Note: The starting hands refer to the hands that existed at the start of trick taking play
+ * Note: Player 1 should be considered to be at the bottom of the table with the numbers increasing going clockwise around the table.
  * Example (With reduced cards for simplicity):
  * 0-R-|13|0|7|6|-|AS,QS|JC,KD|2D,3D|5C,8C|-2C,JC
  */
-class TrickBasedGameState : GameState
+class TrickBasedGameState : public GameState
 {
 public:
     /**
@@ -120,6 +120,49 @@ public:
      * @brief Clears the current move record and 13 random cards to each player
      */
     void dealHand();
+
+    /**
+     * @brief Prints the scores, the hands, and the cards played that trick
+     */
+    virtual void printGameState() const;
+
+    /**
+     * @brief Get all of the moves that come before the * move, and an empty QList<QString> if there is never a * move
+     * @return A QList<QString> of the pre moves
+     */
+    QList<QString> getPreTrickMoves() const;
+
+    /**
+     * @brief Get the moves between the two * moves and all of the moves if there are no * moves returns all of the moves
+     * @return The trick making moves
+     */
+    QList<QString> getTrickMoves() const;
+
+    /**
+     * @brief Get all of the moves that come after the * move, and an empty QList<QString> if there is never a * move
+     * @return A QList<QString> of the pre moves
+     */
+    QList<QString> getPostTrickMoves() const;
+
+    /**
+     * @brief Finds the winner of a trick
+     * @param trumpSuit The suit that acts as trump for this trick
+     * @param cards The cards that are being evaluated
+     * @return The index of the card that won the trick
+     */
+    static int findWinnerOfTrick(QString trumpSuit, QList<QString> cards);
+
+    /**
+     * @brief Get the hands of each of all of the players
+     * @return A QList of QLists of QStrings which represent a card
+     */
+    QList<QList<QString>> getPlayerHands() const;
+
+    /**
+     * @brief Determines if all of the player's hands are empty
+     * @return If all of the player's hands are empty
+     */
+    bool donePlayingTricks() const;
 
 private:
     Deck deck;
