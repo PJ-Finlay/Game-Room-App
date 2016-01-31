@@ -70,9 +70,6 @@ void TicTacToeGameState::updateGameState(QString move){
     this->incrementTurn();
 }
 
-/**
- * @todo Not as efficient as it could be
- */
 int TicTacToeGameState::findWinners() const{
     //This finds winners by testing the 8 possible win conditions, then testing for a tie
 

@@ -116,7 +116,91 @@ void TrickBasedGameState::dealHand()
     clearMoveRecord();
 }
 
-//0-R-|13|0|7|6|-AS,QS|JC,KD|2D,3D|5C,8C-2C,JC
+void TrickBasedGameState::printGameState() const
+{
+    qDebug() << "1)" << getPlayerScore(1);
+    qDebug() << "2)" << getPlayerScore(2);
+    qDebug() << "3)" << getPlayerScore(3);
+    qDebug() << "4)" << getPlayerScore(4);
+}
+
+QList<QString> TrickBasedGameState::getPreTrickMoves() const
+{
+    QList<QString> toReturn = getMoveRecord();
+    int index = toReturn.indexOf(QString("*"));
+    if(index == -1) return QList<QString>();
+    return toReturn.mid(0,index);
+}
+
+QList<QString> TrickBasedGameState::getTrickMoves() const
+{
+    QList<QString> toReturn = getMoveRecord();
+    int index = toReturn.indexOf(QString("*"));
+    if(index == -1) return toReturn;
+    int secondIndex = toReturn.lastIndexOf(QString("*"));
+    return toReturn.mid(index,secondIndex-index);
+}
+
+QList<QString> TrickBasedGameState::getPostTrickMoves() const
+{
+    QList<QString> toReturn = getMoveRecord();
+    int index = toReturn.lastIndexOf(QString("*"));
+    if(index == -1) return QList<QString>();
+    return toReturn.mid(index);
+}
+
+int TrickBasedGameState::findWinnerOfTrick(QString trumpSuit, QList<QString> cards)
+{
+    int indexOfBestCard = 0;
+    bool trumpCardFound = false;
+    Card bestCard = Card(cards.at(0));
+    for(int i = 0; i < cards.size(); i++){
+        Card currentCard = Card(cards.at(i));
+        if(currentCard.getSuit().compare(trumpSuit) == 0){
+            if(!trumpCardFound || currentCard.getIntValue() > bestCard.getIntValue()){
+                bestCard = currentCard;
+                indexOfBestCard = i;
+            }
+            trumpCardFound = true;
+        }
+        if(currentCard.getSuit().compare(trumpSuit) != 0 && ! trumpCardFound){
+            if(currentCard.getIntValue() > bestCard.getIntValue()){
+                bestCard = currentCard;
+                indexOfBestCard = i;
+            }
+        }
+    }
+    return indexOfBestCard;
+}
+
+QList<QList<QString>> TrickBasedGameState::getPlayerHands() const
+{
+    QList<QList<QString>> toReturn = getStartingHands();
+    QList<QString> moves = getTrickMoves();
+    for(int i = 0; i < moves.length(); i++){ //Go through each move
+        QString currentMove = moves.at(i);
+        for(int j = 0; j < toReturn.size(); i++){ //Loop through each set of cards
+            int index = toReturn.at(i).indexOf(currentMove);
+            if(index != -1){
+                QList<QString> newList = toReturn.at(i);
+                newList.removeAt(i);
+                toReturn.replace(i,newList);
+                break;
+            }
+        }
+    }
+    return toReturn;
+}
+
+bool TrickBasedGameState::donePlayingTricks() const
+{
+    QList<QList<QString>> hands = getPlayerHands();
+    for(int i = 0; i < hands.size(); i++){
+        if(hands.at(i).size() > 0) return false;
+    }
+    return true;
+}
+
 QString TrickBasedGameState::getGameState() const
 {
     QString toReturn;

@@ -1,6 +1,8 @@
 #include "heartstests.h"
 
 #include <QDebug>
+#include <iostream>
+#include <string>
 
 #include "../../../gamestate/individual_game_states/heartsgamestate.h"
 
@@ -22,6 +24,9 @@ bool HeartsTests::testHeartsGameState()
     HeartsGameState h;
     h.initializeGame();
 
+
+
+
     h.setGameState("0-R-|13|0|7|6|-|AS,QS|JC,KD|2D,3D|5C,8C|-2C,JC");
     if(h.getGameState().compare("0-R-|13|0|7|6|-|AS,QS|JC,KD|2D,3D|5C,8C|-2C,JC") != 0){
         allTestsPassed = false;
@@ -37,6 +42,12 @@ bool HeartsTests::testHeartsGameState()
         allTestsPassed = false;
         qDebug() << "setGameState or getGameState not working correctly in TrickBasedGameState";
     }
+
+    h.initializeGame();
+    qDebug() << h.getGameState();
+    std::string input;
+    std::cin >> input;
+    h.makeMove(QString::fromStdString(input));
 
 
     if(!allTestsPassed) qDebug() << "HeartsGameState Failed";
