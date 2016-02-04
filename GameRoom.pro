@@ -36,7 +36,12 @@ SOURCES += main.cpp\
     gamestate/elements/card.cpp \
     gamestate/individual_game_states/heartsgamestate.cpp \
     debug/unittests/gametests/heartstests.cpp \
-    gamestate/game_state_types/trickbasedgamestate.cpp
+    gamestate/game_state_types/trickbasedgamestate.cpp \
+    ui/mainview.cpp \
+    ui/views/gamechooser.cpp \
+    ui/views/gameplay.cpp \
+    ui/views/view.cpp \
+    ui/widgets/gamechooserbutton.cpp
 
 HEADERS  += \
     games/game.h \
@@ -61,4 +66,12 @@ HEADERS  += \
     gamestate/elements/card.h \
     gamestate/individual_game_states/heartsgamestate.h \
     debug/unittests/gametests/heartstests.h \
-    gamestate/game_state_types/trickbasedgamestate.h
+    gamestate/game_state_types/trickbasedgamestate.h \
+    ui/mainview.h \
+    ui/views/gamechooser.h \
+    ui/views/gameplay.h \
+    ui/views/view.h \
+    ui/widgets/gamechooserbutton.h
+
+DISTFILES += \
+    ui/Reintegrating UI

@@ -14,7 +14,7 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
     GameChooser* gameChooser = new GameChooser(this);
 
     //Connects The gameChosen signal in gameChooser to MainView's openGame slot
-    QObject::connect(gameChooser, SIGNAL(gameChosen(Game)),this, SLOT(openGame(Game)));
+    QObject::connect(gameChooser, SIGNAL(gameChosen(std::shared_ptr<Game>)),this, SLOT(openGame(std::shared_ptr<Game>)));
 
     //Makes gameChooser the widget that is being viewed
     layout->addWidget(gameChooser);
@@ -24,7 +24,7 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
     this->setLayout(layout);
 }
 
-void MainView::openGame(Game game){
+void MainView::openGame(std::shared_ptr<Game> game){
     //Create the game layout
     GamePlay* gameplay = new GamePlay(game,this);
 
@@ -37,7 +37,7 @@ void MainView::openGameChooser(){
     //Create the GameChooser
     GameChooser* gameChooser = new GameChooser(this);
     swapViews(gameChooser);
-    QObject::connect(gameChooser, SIGNAL(gameChosen(Game)),this, SLOT(openGame(Game)));
+    QObject::connect(gameChooser, SIGNAL(gameChosen(std::shared_ptr<Game>)),this, SLOT(openGame(std::shared_ptr<Game>)));
 }
 
 void MainView::swapViews(QWidget *newView){

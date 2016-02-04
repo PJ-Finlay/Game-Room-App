@@ -1,13 +1,13 @@
 #include <QApplication>
 
-//#include "mainview.h"
+#include "ui/mainview.h"
 
 
 /*Preprocesser Defines:
  *  SANDBOXBUILD - Defined if it is a sandbox build, which directs control flow to  DebugSandbox
  *
  */
-#define SANDBOXBUILD
+//#define SANDBOXBUILD
 
 
 
@@ -16,8 +16,7 @@
 #endif
 
 //Removed to supress compiler error
-//int main(int argc, char *argv[])
-int main()
+int main(int argc, char *argv[])
 {
 #ifdef SANDBOXBUILD // Runs the test method of the DebugSandbox if SANDBOXBUILD is enabled
     DebugSandbox::test();

@@ -12,7 +12,7 @@
  */
 class GameList
 {
-public:
+public: 
     /**
      * @brief Returns a std::shared_ptr to the game from an index, if an invalid index is given it returns TicTacToe
      * @return The requested game pointer
