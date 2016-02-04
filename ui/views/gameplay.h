@@ -20,7 +20,7 @@ public:
      * @param The game to be played
      * @param The pointer of the parent QWidget
      */
-    GamePlay(Game game, QWidget* parent);
+    GamePlay(std::shared_ptr<Game> game, QWidget* parent);
 
 private slots:
     /**

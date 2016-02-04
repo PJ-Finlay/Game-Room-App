@@ -13,25 +13,21 @@ GameChooser::GameChooser(QWidget *parent) : View(parent)
     //Layout for GameChooserView
     QVBoxLayout* layout = new QVBoxLayout();
 
-    //Get the list of the games
-    GameList* gameList = new GameList();
-    std::shared_ptr<QList<Game>> list = gameList->getGameList();
-
     //Loop through list and add each game to page as a GameChooserButton
-    for (int i = 0; i < list->size(); i++) {
-        Game game = list->at(i);
+    for (int i = 0; i < GameList::numberOfGames(); i++) {
+        std::shared_ptr<Game> game = GameList::getGame(i);
         GameChooserButton* button = new GameChooserButton(game,this);
         layout->addWidget(button);
 
         //Connect button click signal to selectGame slot
-        QObject::connect(button,SIGNAL(gameChosen(Game)),this,SLOT(selectGame(Game)));
+        QObject::connect(button,SIGNAL(gameChosen(std::shared_ptr<Game>)),this,SLOT(selectGame(std::shared_ptr<Game>)));
     }
 
     //Set layout of GameChooser
     this->setLayout(layout);
 }
 
-void GameChooser::selectGame(Game game){
+void GameChooser::selectGame(std::shared_ptr<Game> game){
     emit gameChosen(game);
 }
 

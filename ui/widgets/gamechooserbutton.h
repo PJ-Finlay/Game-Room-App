@@ -18,16 +18,16 @@ public:
      * @param The game that this button represents
      * @param parent
      */
-    GameChooserButton(Game game, QWidget* parent);
+    GameChooserButton(std::shared_ptr<Game> game, QWidget* parent);
 
     /**
      * @brief Gets the Game object that the GameChooserButton represents
      * @return The game object that was selected
      */
-    Game getGame();
+    std::shared_ptr<Game> getGame();
 
 private:
-    Game game;
+    std::shared_ptr<Game> game;
 
 private slots:
     /**
@@ -40,7 +40,7 @@ signals:
      * @brief Signals that the user has clicked on the button and selected a game
      * @param g The game that has been chosen
      */
-    void gameChosen(Game game);
+    void gameChosen(std::shared_ptr<Game> game);
 
 };
 

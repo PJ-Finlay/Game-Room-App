@@ -26,14 +26,14 @@ signals:
      * @brief Signals that a game has been chosen, and passes the game that has been chosen
      * @param game The game that has been selected
      */
-    void gameChosen(Game game);
+    void gameChosen(std::shared_ptr<Game> game);
 
 private slots:
     /**
      * @brief Slot that emits a signal that a game has been chosen
      * @param The game that will be signaled as chosen
      */
-    void selectGame(Game game);
+    void selectGame(std::shared_ptr<Game> game);
 };
 
 #endif // GAMECHOOSER_H

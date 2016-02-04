@@ -7,6 +7,7 @@ Hearts should be abstracted for code reuse for other Trick based games
 Consider Creating a superclass that would encompase all grid board games (Chess,Checkers,TicTacToe, potentially more)
 Make CLI more powerful (undo, step through computer played game)
 Unify when it is printed when test failed
+Finish Hearts AI
 
 
 - Know Bugs -

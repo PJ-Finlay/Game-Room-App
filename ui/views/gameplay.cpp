@@ -3,13 +3,13 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-GamePlay::GamePlay(Game game, QWidget* parent) : View(parent)
+GamePlay::GamePlay(std::shared_ptr<Game> game, QWidget* parent) : View(parent)
 {
     //Create button that returns user the the GameChooser view
     QPushButton* returnToGameChooserButton = new QPushButton("<-");
 
     //Get the gameWidget from the game
-    QWidget* gameWidget = game.getGameWidget();
+    QWidget* gameWidget = game->getGameWidget();
     gameWidget->setParent(this);
 
     //Create the layout for Gameplay view

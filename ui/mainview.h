@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
+#include <memory>
 
 #include "games/game.h"
 
@@ -25,7 +26,7 @@ public slots:
      * @brief Slot to change the view to a GamePlay QWidget, and pass it the Game parameter
      * @param game The game that will be played
      */
-    void openGame(Game game);
+    void openGame(std::shared_ptr<Game> game);
 
     /**
      * @brief Slot to change the view to the GameChooser QWidget
