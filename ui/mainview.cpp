@@ -8,7 +8,7 @@
 MainView::MainView(QWidget *parent) : QWidget(parent)
 {
     //layout is the layout for the MainView
-    layout = new QVBoxLayout();
+    layout = new QVBoxLayout(this);
 
     //Creates the initial view which is GameChooser
     GameChooser* gameChooser = new GameChooser(this);
