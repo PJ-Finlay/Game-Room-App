@@ -11,18 +11,16 @@ GameChooserButton::GameChooserButton(std::shared_ptr<Game> game, QWidget* parent
     //Assign game piv to game parameter
     this->game = game;
 
-    //Construct the text fo the button
-    QString name = "<h2>";
-    name.append(game->getName());
-    name.append("</h2>");
-
     //Put the text in a QLabel
-    QLabel* title = new QLabel(name, this);
+    QLabel* title = new QLabel(game->getName(), this);
     title->setAlignment(Qt::AlignCenter);
 
     //Add QLabel to layout and set the layout
     layout->addWidget(title);
     this->setLayout(layout);
+
+    //Set size policy
+    this->setSizePolicy(QSizePolicy(QSizePolicy::MinimumExpanding,QSizePolicy::MinimumExpanding));
 
     //Connect the clicked signal from this button to its chooseGame slot
     QObject::connect(this,SIGNAL(clicked()),this,SLOT(chooseGame()));

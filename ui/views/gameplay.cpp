@@ -13,7 +13,7 @@ GamePlay::GamePlay(std::shared_ptr<Game> game, QWidget* parent) : View(parent)
     gameWidget->setParent(this);
 
     //Create the layout for Gameplay view
-    QVBoxLayout* layout = new QVBoxLayout();
+    QVBoxLayout* layout = new QVBoxLayout(this);
 
     //Add both widgets in VBoxLayout
     layout->addWidget(returnToGameChooserButton);
