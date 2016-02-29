@@ -41,7 +41,8 @@ SOURCES += main.cpp\
     ui/views/gamechooser.cpp \
     ui/views/gameplay.cpp \
     ui/views/view.cpp \
-    ui/widgets/gamechooserbutton.cpp
+    ui/widgets/gamechooserbutton.cpp \
+    ui/gamewidget.cpp
 
 HEADERS  += \
     games/game.h \
@@ -71,7 +72,8 @@ HEADERS  += \
     ui/views/gamechooser.h \
     ui/views/gameplay.h \
     ui/views/view.h \
-    ui/widgets/gamechooserbutton.h
+    ui/widgets/gamechooserbutton.h \
+    ui/gamewidget.h
 
 DISTFILES += \
     ui/Reintegrating UI
