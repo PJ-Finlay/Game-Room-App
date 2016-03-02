@@ -7,6 +7,7 @@
 
 #include "../gamestate/gamestate.h"
 #include "../ai/computer_players/computerplayer.h"
+#include "../ui/gamewidget.h"
 
 /**
  * @brief The superclass for every game
@@ -30,7 +31,7 @@ public:
      * @brief Gets the widget that plays this game
      * @return The widget that plays the represented game
      */
-    QWidget* getGameWidget() const;
+    std::shared_ptr<GameWidget> getGameWidget() const;
 
     /**
      * @brief Gets a shared_ptr to the GameState that represents the game

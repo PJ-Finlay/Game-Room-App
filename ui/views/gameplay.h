@@ -6,6 +6,7 @@
 #include <QWidget>
 
 #include "games/game.h"
+#include "ui/gamewidget.h"
 
 /**
  * @brief A View where the user plays a game

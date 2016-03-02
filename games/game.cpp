@@ -13,9 +13,11 @@ void Game::setName(QString name){
     this->name = name;
 }
 
-QWidget* Game::getGameWidget() const{
-    QLabel* p = new QLabel(getName());
-    return p;
+std::shared_ptr<GameWidget> Game::getGameWidget() const{
+    GameWidget* gameWidget;
+    std::shared_ptr<GameWidget> toReturn(gameWidget);
+    QLabel* p = new QLabel(getName(),gameWidget);
+    return toReturn;
 }
 
 
