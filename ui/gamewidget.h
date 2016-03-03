@@ -13,6 +13,7 @@ class GameWidget : public QWidget
 
 public:
     explicit GameWidget(QWidget *parent = 0);
+    explicit GameWidget(QString name, QWidget *parent = 0);
 
 signals:
     /**

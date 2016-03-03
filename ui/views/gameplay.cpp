@@ -2,6 +2,7 @@
 
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QLabel>
 
 GamePlay::GamePlay(std::shared_ptr<Game> game, QWidget* parent) : View(parent)
 {
@@ -9,7 +10,7 @@ GamePlay::GamePlay(std::shared_ptr<Game> game, QWidget* parent) : View(parent)
     QPushButton* returnToGameChooserButton = new QPushButton("<-");
 
     //Get the gameWidget from the game
-    std::shared_ptr<GameWidget> gameWidget = game->getGameWidget();
+    GameWidget* gameWidget = game->getGameWidget();
     gameWidget->setParent(this);
 
     //Create the layout for Gameplay view
@@ -17,7 +18,7 @@ GamePlay::GamePlay(std::shared_ptr<Game> game, QWidget* parent) : View(parent)
 
     //Add both widgets in VBoxLayout
     layout->addWidget(returnToGameChooserButton);
-    layout->addWidget(gameWidget.get());
+    layout->addWidget(gameWidget);
 
     //Set the layout
     this->setLayout(layout);

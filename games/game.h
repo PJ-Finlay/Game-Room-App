@@ -28,10 +28,10 @@ public:
     void setName(QString name);
 
     /**
-     * @brief Gets the widget that plays this game
+     * @brief Gets the widget that plays this game. If this method is not redefined in a subclass.
      * @return The widget that plays the represented game
      */
-    std::shared_ptr<GameWidget> getGameWidget() const;
+    virtual GameWidget* getGameWidget() const;
 
     /**
      * @brief Gets a shared_ptr to the GameState that represents the game
