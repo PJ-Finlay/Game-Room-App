@@ -1,5 +1,9 @@
 #include "gamewidget.h"
 
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QLabel>
+
 GameWidget::GameWidget(QWidget *parent) : QWidget(parent)
 {
 

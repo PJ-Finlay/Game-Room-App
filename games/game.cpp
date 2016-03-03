@@ -13,10 +13,9 @@ void Game::setName(QString name){
     this->name = name;
 }
 
-std::shared_ptr<GameWidget> Game::getGameWidget() const{
-    GameWidget* gameWidget;
-    std::shared_ptr<GameWidget> toReturn(gameWidget);
-    QLabel* p = new QLabel(getName(),gameWidget);
+GameWidget* Game::getGameWidget() const{
+    GameWidget* toReturn = new GameWidget();
+    QLabel* lbl = new QLabel(getName(),toReturn);
     return toReturn;
 }
 

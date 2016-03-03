@@ -12,8 +12,9 @@ class TicTacToe : public Game
 {
 public:
     TicTacToe();
-    virtual std::shared_ptr<GameState> getGameState() const;
-    virtual std::shared_ptr<ComputerPlayer> getComputerPlayer() const;
+    std::shared_ptr<GameState> getGameState() const;
+    std::shared_ptr<ComputerPlayer> getComputerPlayer() const;
+
 
 };
 
