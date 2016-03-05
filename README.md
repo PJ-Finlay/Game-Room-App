@@ -11,3 +11,4 @@ This folder holds the code for computer players.
 This folder holds the code for representing Game States, and the rules of games
 ##debug##
 This folder contains code for debugging, and nothing in this folder should be included in release code
+

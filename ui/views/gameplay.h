@@ -23,11 +23,21 @@ public:
      */
     GamePlay(std::shared_ptr<Game> game, QWidget* parent);
 
+private:
+    std::shared_ptr<Game> game;
+    std::shared_ptr<GameState> gameState;
+    GameWidget* gameWidget;
+
 private slots:
     /**
      * @brief Slot that emits the returnToGameChooserClicked signal
      */
     void returnToGameChooser();
+
+    /**
+     * @brief This should be called when a move is entered in the GameWidget
+     */
+    void moveEntered(QString move);
 
 signals:
     /**
