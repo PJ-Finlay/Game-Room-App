@@ -14,7 +14,7 @@ public:
     TicTacToe();
     std::shared_ptr<GameState> getGameState() const;
     std::shared_ptr<ComputerPlayer> getComputerPlayer() const;
-
+    GameWidget* getGameWidget() const;
 
 };
 

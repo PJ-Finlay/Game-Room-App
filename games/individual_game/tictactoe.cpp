@@ -2,6 +2,7 @@
 
 #include "../../ai/computer_players/tictactoecomputerplayer.h"
 #include "../../gamestate/individual_game_states/tictactoegamestate.h"
+#include "../../ui/widgets/game_widgets/tictactoegamewidget.h"
 
 TicTacToe::TicTacToe() : Game()
 {
@@ -18,4 +19,9 @@ std::shared_ptr<ComputerPlayer> TicTacToe::getComputerPlayer() const
 {
     std::shared_ptr<TicTacToeComputerPlayer> toReturn(new TicTacToeComputerPlayer());
     return toReturn;
+}
+
+GameWidget *TicTacToe::getGameWidget() const
+{
+    return new TicTacToeGameWidget();
 }

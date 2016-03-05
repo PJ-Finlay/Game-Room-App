@@ -42,7 +42,9 @@ SOURCES += main.cpp\
     ui/views/gameplay.cpp \
     ui/views/view.cpp \
     ui/widgets/gamechooserbutton.cpp \
-    ui/gamewidget.cpp
+    ui/gamewidget.cpp \
+    ui/widgets/game_widgets/tictactoegamewidget.cpp \
+    ui/widgets/pushbuttonwithid.cpp
 
 HEADERS  += \
     games/game.h \
@@ -73,7 +75,9 @@ HEADERS  += \
     ui/views/gameplay.h \
     ui/views/view.h \
     ui/widgets/gamechooserbutton.h \
-    ui/gamewidget.h
+    ui/gamewidget.h \
+    ui/widgets/game_widgets/tictactoegamewidget.h \
+    ui/widgets/pushbuttonwithid.h
 
 DISTFILES += \
     ui/Reintegrating UI
