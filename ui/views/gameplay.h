@@ -4,12 +4,14 @@
 #include "view.h"
 
 #include <QWidget>
+#include <QVBoxLayout>
 
 #include "games/game.h"
 #include "ui/gamewidget.h"
+#include "../widgets/playerselection.h"
 
 /**
- * @brief A View where the user plays a game
+ * @brief A View where the user selects options for a game and plays it plays a game
  */
 class GamePlay : public View
 {
@@ -27,6 +29,15 @@ private:
     std::shared_ptr<Game> game;
     std::shared_ptr<GameState> gameState;
     GameWidget* gameWidget;
+    PlayerSelection* playerSelection;
+    QString playerConfiguration;
+
+    QVBoxLayout* layout;
+    QWidget* currentWidget;
+
+    void showGamePlay();
+    void showOptionsSelector();
+    void checkForComputerPlay();
 
 private slots:
     /**
@@ -38,6 +49,8 @@ private slots:
      * @brief This should be called when a move is entered in the GameWidget
      */
     void moveEntered(QString move);
+
+    void continueToGame();
 
 signals:
     /**

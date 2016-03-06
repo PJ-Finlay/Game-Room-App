@@ -62,6 +62,7 @@ public:
 
     /**
      * @brief Returns a QList of ints that contains all of the valid number of players for that game.
+     * Element 0 should be the most common/best option
      * @return A QList of all of the valid number of players
      */
     virtual QList<int> getValidNumberOfPlayers() const = 0;

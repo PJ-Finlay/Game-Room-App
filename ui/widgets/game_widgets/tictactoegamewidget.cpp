@@ -10,6 +10,7 @@ TicTacToeGameWidget::TicTacToeGameWidget(QWidget* parent) : GameWidget(parent)
         for(int j = 0; j < 3; j++){
             QString buttonId = QString::number(j) + QString::number(2 - i);
             PushButtonWithId* btn = new PushButtonWithId(buttonId," ",this);
+            btn->setSizePolicy(QSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding));
             buttons[j][2 - i] = btn;
             layout->addWidget(btn,i,j);
             QObject::connect(btn,SIGNAL(clicked(QString)),this,SLOT(squareClicked(QString)));
