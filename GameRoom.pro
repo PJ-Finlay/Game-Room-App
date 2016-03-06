@@ -44,7 +44,8 @@ SOURCES += main.cpp\
     ui/widgets/gamechooserbutton.cpp \
     ui/gamewidget.cpp \
     ui/widgets/game_widgets/tictactoegamewidget.cpp \
-    ui/widgets/pushbuttonwithid.cpp
+    ui/widgets/pushbuttonwithid.cpp \
+    ui/widgets/playerselection.cpp
 
 HEADERS  += \
     games/game.h \
@@ -77,7 +78,8 @@ HEADERS  += \
     ui/widgets/gamechooserbutton.h \
     ui/gamewidget.h \
     ui/widgets/game_widgets/tictactoegamewidget.h \
-    ui/widgets/pushbuttonwithid.h
+    ui/widgets/pushbuttonwithid.h \
+    ui/widgets/playerselection.h
 
 DISTFILES += \
     ui/Reintegrating UI
