@@ -2,6 +2,7 @@
 #include <QDebug>
 
 #include "ui/mainview.h"
+#include "ui/widgets/game_widgets/tictactoegamewidget.h"
 
 
 
@@ -27,7 +28,6 @@ int main(int argc, char *argv[])
 
     //Create the main view of the application and show it
     MainView* m = new MainView();
-    //m->showMaximized();
     m->show();
 
     return a.exec();
