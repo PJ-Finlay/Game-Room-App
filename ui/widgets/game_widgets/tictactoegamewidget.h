@@ -4,8 +4,11 @@
 #include "../../gamewidget.h"
 
 #include <QPushButton>
+#include <QGraphicsView>
+#include <QGraphicsScene>
 
 #include "../pushbuttonwithid.h"
+#include "game_elements/general/clickablescene.h"
 
 class TicTacToeGameWidget : public GameWidget
 {
@@ -14,15 +17,27 @@ class TicTacToeGameWidget : public GameWidget
 public:
     explicit TicTacToeGameWidget(QWidget* parent = 0);
 
+protected:
+    void resizeEvent(QResizeEvent* event);
+
 private:
-    PushButtonWithId* buttons[3][3];
+    ClickableScene* scene;
+    QGraphicsView* view;
+    QGraphicsPixmapItem* background;
+    QString gameState;
+
+    void drawPiece(int x, int y, bool isX);
 
 
 public slots:
     void setGameState(QString gameState);
 
 private slots:
-    void squareClicked(QString id);
+    void squareClicked(int x, int y);
+
+
+signals:
+    void moveEntered(QString move);
 
 };
 

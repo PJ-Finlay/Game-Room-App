@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/individual_games/tic_tac_toe/X.png</file>
+        <file>images/individual_games/tic_tac_toe/O.png</file>
+        <file>images/individual_games/tic_tac_toe/Board.png</file>
+    </qresource>
+</RCC>
