@@ -74,7 +74,6 @@ int TicTacToeGameState::findWinners() const{
     //This finds winners by testing the 8 possible win conditions, then testing for a tie
 
     //Test the eight winning combinations
-
     char winningChar = '_';
     //Horizontal Rows
     for(int i = 0; i < 3; i++){ //Loop through each row
