@@ -29,6 +29,9 @@ GameChooser::GameChooser(QWidget *parent) : View(parent)
         QObject::connect(button,SIGNAL(gameChosen(std::shared_ptr<Game>)),this,SLOT(selectGame(std::shared_ptr<Game>)));
     }
 
+    //Make it a normal view
+    this->setIsNormalView(true);
+
     //Set layout of GameChooser
     this->setLayout(layout);
 }
