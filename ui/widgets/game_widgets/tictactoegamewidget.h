@@ -6,6 +6,7 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QList>
+#include <QVBoxLayout>
 
 #include "../pushbuttonwithid.h"
 #include "game_elements/general/clickablescene.h"
@@ -35,6 +36,7 @@ protected:
     void resizeEvent(QResizeEvent* event);
 
 private:
+    QVBoxLayout* layout;
     ClickableScene* scene; //The ClickableScene used to show the game
     QGraphicsView* view; // The QGraphicsView that encapsulates the ClickableScene
     QGraphicsPixmapItem* background; //The background which shows the # markings for TicTacToe

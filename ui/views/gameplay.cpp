@@ -63,6 +63,9 @@ void GamePlay::showGamePlay()
         checkForComputerPlay();
 
         gamePlayIndex = this->layout->addWidget(gamePlay);
+
+        //Makes it not a "Normal View"
+        this->setIsNormalView(false);
     }
     this->layout->setCurrentIndex(gamePlayIndex);
 }
@@ -104,6 +107,9 @@ void GamePlay::showOptionsSelector()
         QObject::connect(returnToGameChooserButton,SIGNAL(clicked(bool)),this,SLOT(returnToGameChooser()));
 
         optionsSelectorIndex = this->layout->addWidget(optionsView);
+
+        //Makes it a "Normal View"
+        this->setIsNormalView(true);
     }
     this->layout->setCurrentIndex(optionsSelectorIndex);
 }

@@ -6,9 +6,12 @@
 
 TicTacToeGameWidget::TicTacToeGameWidget(QWidget* parent) : GameWidget(parent)
 {
+    layout = new QVBoxLayout(this);
+    this->setLayout(layout);
     gameState = "_________";
     scene = new ClickableScene(this);
     view = new QGraphicsView(scene,this);
+    layout->addWidget(view);
     background = new QGraphicsPixmapItem();
     placedPieces = QList<QGraphicsItem*>();
 }
@@ -16,15 +19,17 @@ TicTacToeGameWidget::TicTacToeGameWidget(QWidget* parent) : GameWidget(parent)
 void TicTacToeGameWidget::resizeEvent(QResizeEvent *event)
 {
     //Reset the scene/view
+    layout->removeWidget(view);
     delete scene;
     delete view;
     scene = new ClickableScene(this);
     view = new QGraphicsView(scene,this);
+    layout->addWidget(view);
     QObject::connect(scene,SIGNAL(clicked(int,int)),this,SLOT(squareClicked(int,int)));
 
     //Redraw the background
     QPixmap pixmap(":/images/individual_games/tic_tac_toe/Board.png");
-    pixmap = pixmap.scaled(event->size().width(),event->size().height());
+    pixmap = pixmap.scaled(event->size().width() - 50,event->size().height() - 50,Qt::KeepAspectRatio);
     background = new QGraphicsPixmapItem(pixmap);
     scene->addItem(background);
 
