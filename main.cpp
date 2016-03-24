@@ -1,5 +1,5 @@
 #include <QApplication>
-#include <QDebug>
+#include <QFile>
 
 #include "ui/mainview.h"
 #include "ui/widgets/game_widgets/tictactoegamewidget.h"
@@ -25,6 +25,11 @@ int main(int argc, char *argv[])
     DebugSandbox::test();
 #else //Normal Build
     QApplication a(argc, argv);
+
+    //Set the stylesheet
+    QFile file(":/stylesheet.qss");
+    file.open(QFile::ReadOnly);
+    a.setStyleSheet(QLatin1String(file.readAll()));
 
     //Create the main view of the application and show it
     MainView* m = new MainView();
