@@ -119,10 +119,7 @@ void GamePlay::checkForComputerPlay()
     int turn = gameState->getTurn();
     if(playerConfiguration.mid(turn - 1,1).compare("c") == 0 && gameState->findWinners() == -1){//If it is the computer's turn
         QString computerMove = game->getComputerPlayer()->getMoveFromGameState(gameState->getGameState());
-        gameState->makeMove(computerMove);
-        gameWidget->makeMove(computerMove);
-        gameWidget->setGameState(gameState->getGameState());
-        checkForComputerPlay();
+        moveEntered(computerMove);
     }
 }
 
@@ -167,10 +164,11 @@ void GamePlay::moveEntered(QString move)
         gameState->makeMove(move);
         gameWidget->makeMove(move);
         gameWidget->setGameState(gameState->getGameState());
-        checkForComputerPlay();
         if(gameState->findWinners() != -1){
             showGameOver();
+            return;
         }
+        checkForComputerPlay();
     }
 }
 

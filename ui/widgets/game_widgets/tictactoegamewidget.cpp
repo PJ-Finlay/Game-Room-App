@@ -18,6 +18,9 @@ TicTacToeGameWidget::TicTacToeGameWidget(QWidget* parent) : GameWidget(parent)
 
 void TicTacToeGameWidget::resizeEvent(QResizeEvent *event)
 {
+    //Clear placed pieces
+    placedPieces.clear();
+
     //Reset the scene/view
     layout->removeWidget(view);
     delete scene;
