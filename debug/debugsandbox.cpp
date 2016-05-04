@@ -1,17 +1,22 @@
 #include "debugsandbox.h"
 
-#include <memory>
-#include <QString>
-
+#include <QDebug>
 #include "debug/unittests/testdirectory.h"
 #include "cli.h"
 
-#include "debug/unittests/gametests/checkerstests.h"
+//Temporary Includes
+#include "../ui/widgets/game_widgets/game_elements/general/piecebasedgamewidget.h"
 
 void DebugSandbox::test()
 {
-    //cli();
-    unitests();
+    PieceBasedGameWidget* w = new PieceBasedGameWidget();
+    QPixmap pixmap(":/images/individual_games/tic_tac_toe/Board.png");
+    w->setBackground(pixmap);
+    Piece p("id",pixmap,.33,.33,.33,0);
+
+    w->addPiece(p);
+    w->show();
+
 }
 
 void DebugSandbox::cli()

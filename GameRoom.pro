@@ -46,7 +46,9 @@ SOURCES += main.cpp\
     ui/widgets/game_widgets/tictactoegamewidget.cpp \
     ui/widgets/pushbuttonwithid.cpp \
     ui/widgets/playerselection.cpp \
-    ui/widgets/game_widgets/game_elements/general/clickablescene.cpp
+    ui/widgets/game_widgets/game_elements/general/clickablescene.cpp \
+    ui/widgets/game_widgets/game_elements/general/piecebasedgamewidget.cpp \
+    ui/widgets/game_widgets/game_elements/general/piece.cpp
 
 HEADERS  += \
     games/game.h \
@@ -81,7 +83,9 @@ HEADERS  += \
     ui/widgets/game_widgets/tictactoegamewidget.h \
     ui/widgets/pushbuttonwithid.h \
     ui/widgets/playerselection.h \
-    ui/widgets/game_widgets/game_elements/general/clickablescene.h
+    ui/widgets/game_widgets/game_elements/general/clickablescene.h \
+    ui/widgets/game_widgets/game_elements/general/piecebasedgamewidget.h \
+    ui/widgets/game_widgets/game_elements/general/piece.h
 
 DISTFILES += \
     ui/Reintegrating UI
