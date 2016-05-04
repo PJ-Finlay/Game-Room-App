@@ -31,7 +31,7 @@ void TicTacToeGameWidget::drawPiece(int x, int y, bool isX)
     //Create the pixmap of the piece & resize it to the correct size
     QPixmap pixmap(imagePath);
 
-    float marginPercentage = .33;
+    float marginPercentage = .330;
 
     Piece p(imagePath,pixmap,.33 * (1-marginPercentage),.33 * (1-marginPercentage),xPos + 0.5 * marginPercentage * .33 ,yPos + 0.5 * marginPercentage * .33 );
     this->addPiece(p);
