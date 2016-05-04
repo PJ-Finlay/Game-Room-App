@@ -48,7 +48,8 @@ SOURCES += main.cpp\
     ui/widgets/playerselection.cpp \
     ui/widgets/game_widgets/game_elements/general/clickablescene.cpp \
     ui/widgets/game_widgets/game_elements/general/piecebasedgamewidget.cpp \
-    ui/widgets/game_widgets/game_elements/general/piece.cpp
+    ui/widgets/game_widgets/game_elements/general/piece.cpp \
+    ui/widgets/game_widgets/checkersgamewidget.cpp
 
 HEADERS  += \
     games/game.h \
@@ -85,7 +86,8 @@ HEADERS  += \
     ui/widgets/playerselection.h \
     ui/widgets/game_widgets/game_elements/general/clickablescene.h \
     ui/widgets/game_widgets/game_elements/general/piecebasedgamewidget.h \
-    ui/widgets/game_widgets/game_elements/general/piece.h
+    ui/widgets/game_widgets/game_elements/general/piece.h \
+    ui/widgets/game_widgets/checkersgamewidget.h
 
 DISTFILES += \
     ui/Reintegrating UI

@@ -2,6 +2,7 @@
 
 #include "../../ai/computer_players/checkerscomputerplayer.h"
 #include "../../gamestate/individual_game_states/checkersgamestate.h"
+#include "../../ui/widgets/game_widgets/checkersgamewidget.h"
 
 Checkers::Checkers() : Game()
 {
@@ -18,4 +19,9 @@ std::shared_ptr<ComputerPlayer> Checkers::getComputerPlayer() const
 {
     std::shared_ptr<CheckersComputerPlayer> toReturn(new CheckersComputerPlayer());
     return toReturn;
+}
+
+GameWidget *Checkers::getGameWidget() const
+{
+    return new CheckersGameWidget();
 }

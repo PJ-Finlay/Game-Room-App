@@ -14,6 +14,7 @@ public:
     Checkers();
     virtual std::shared_ptr<GameState> getGameState() const;
     virtual std::shared_ptr<ComputerPlayer> getComputerPlayer() const;
+        GameWidget* getGameWidget() const;
 };
 
 #endif // CHECKERS_H
