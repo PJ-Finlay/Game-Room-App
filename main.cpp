@@ -21,10 +21,11 @@
 //Removed to supress compiler error
 int main(int argc, char *argv[])
 {
+    QApplication a(argc, argv);
+
 #ifdef SANDBOXBUILD // Runs the test method of the DebugSandbox if SANDBOXBUILD is enabled
     DebugSandbox::test();
 #else //Normal Build
-    QApplication a(argc, argv);
 
     //Set the stylesheet
     QFile file(":/stylesheet.qss");
@@ -35,6 +36,6 @@ int main(int argc, char *argv[])
     MainView* m = new MainView();
     m->show();
 
-    return a.exec();
 #endif
+    return a.exec();
 }

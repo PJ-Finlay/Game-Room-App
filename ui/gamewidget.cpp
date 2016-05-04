@@ -3,6 +3,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QDebug>
 
 GameWidget::GameWidget(QWidget *parent) : QWidget(parent)
 {

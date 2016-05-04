@@ -4,48 +4,16 @@
 #include <QPixmap>
 #include <QResizeEvent>
 
-TicTacToeGameWidget::TicTacToeGameWidget(QWidget* parent) : GameWidget(parent)
+TicTacToeGameWidget::TicTacToeGameWidget(QWidget* parent) : PieceBasedGameWidget(parent)
 {
-    layout = new QVBoxLayout(this);
-    this->setLayout(layout);
     gameState = "_________";
-    scene = new ClickableScene(this);
-    view = new QGraphicsView(scene,this);
-    layout->addWidget(view);
-    background = new QGraphicsPixmapItem();
-    placedPieces = QList<QGraphicsItem*>();
-}
-
-void TicTacToeGameWidget::resizeEvent(QResizeEvent *event)
-{
-    //Clear placed pieces
-    placedPieces.clear();
-
-    //Reset the scene/view
-    layout->removeWidget(view);
-    delete scene;
-    delete view;
-    scene = new ClickableScene(this);
-    view = new QGraphicsView(scene,this);
-    layout->addWidget(view);
-    QObject::connect(scene,SIGNAL(clicked(int,int)),this,SLOT(squareClicked(int,int)));
-
-    //Redraw the background
-    QPixmap pixmap(":/images/individual_games/tic_tac_toe/Board.png");
-    pixmap = pixmap.scaled(event->size().width() - 50,event->size().height() - 50,Qt::KeepAspectRatio);
-    background = new QGraphicsPixmapItem(pixmap);
-    scene->addItem(background);
-
-    //Redraw the pieces
-    setGameState(gameState);
-
-    //Show the view if it is not already visible
-    view->show();
+    QPixmap background(":/images/individual_games/tic_tac_toe/Board.png");
+    this->setBackground(background);
+    QObject::connect(this,SIGNAL(boardClicked(double,double)),this,SLOT(squareClicked(double,double)));
 }
 
 void TicTacToeGameWidget::drawPiece(int x, int y, bool isX)
 {
-    const int margin = scene->width() / 24; // The margin between the piece and the board lines
 
     //Get the path to the image to be placed
     QString imagePath = ":/images/individual_games/tic_tac_toe/";
@@ -56,33 +24,20 @@ void TicTacToeGameWidget::drawPiece(int x, int y, bool isX)
     }
 
     //Get the size and coordinates of the piece to place
-    int squareWidth = scene->width()/3;
-    int squareHeight = scene->height()/3;
-
-    int sceneXPos = x * squareWidth;
-    int sceneYPos = scene->height() - (squareHeight * y) - squareHeight;
+    float xPos = ((float)x) / 3;
+    //int yPos = scene->height() - ((1/3) * y) - (1/3);
+    float yPos = .66 - (((float)y)/3);
 
     //Create the pixmap of the piece & resize it to the correct size
     QPixmap pixmap(imagePath);
-    pixmap = pixmap.scaled(scene->width()/3 - margin * 2,scene->height()/3 - margin * 2);
 
-    //Create the piece & add it to the scene & put it in the correct location
-    QGraphicsPixmapItem* piece = new QGraphicsPixmapItem(pixmap);
-    scene->addItem(piece);
-    piece->setPos(sceneXPos + margin,sceneYPos + margin);
-
-    //Add the piece to the list of placed pieces
-    placedPieces.append(piece);
+    Piece p(imagePath,pixmap,.33,.33,xPos,yPos);
+    this->addPiece(p);
 }
 
 void TicTacToeGameWidget::setGameState(QString gameState)
 {
-    //Clear already placed pieces & reset the placedPieces list
-    for(int i = 0; i < placedPieces.size(); i++){
-        scene->removeItem(placedPieces.at(i));
-    }
-    placedPieces.clear();
-
+    this->clearPieces();
     //reset the internal record of the gameState
     this->gameState = gameState;
 
@@ -95,13 +50,14 @@ void TicTacToeGameWidget::setGameState(QString gameState)
             drawPiece(i % 3, 2 - (i / 3),false);
         }
     }
+    this->renderPieces();
 }
 
-void TicTacToeGameWidget::squareClicked(int x, int y)
+void TicTacToeGameWidget::squareClicked(double x, double y)
 {
     //Calculate the coordinates in TicTacToe coordinates of the click
-    int squareX = (int)((x * 3) / scene->width());
-    int squareY = -1 * ((int)((y * 3) / scene->height()) - 2);
+    int squareX = (int)(x * 3);
+    int squareY = -1 * ((int)(y * 3)) + 2;
 
     //Calculate the move that was made
     QString move = QString::number(squareX) + QString::number(squareY);
