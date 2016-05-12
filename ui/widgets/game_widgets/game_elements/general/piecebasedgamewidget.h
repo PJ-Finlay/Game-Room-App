@@ -62,6 +62,18 @@ public:
      */
     void renderPieces();
 
+    /**
+     * @brief Sets the ratio of the width/height of the QGraphicsScene. 1=Square 2=Horizontal Rectangle
+     * @param ratio The ratio to be used
+     */
+    void setWidthHeightRatio(float ratio);
+
+    /**
+     * @brief Gets the width/height ratio fo the QGraphicsScene
+     * @return The current width/height ratio
+     */
+    float getWidthHeightRatio();
+
 private:
     QVBoxLayout* layout;
     ClickableScene* scene; //The ClickableScene used to show the game
@@ -69,6 +81,8 @@ private:
     QPixmap background; //Scene Background
     QString gameState; //Keep on copy of the gamestate so that it can be redrawn if the window is resized
     QList<Piece> placedPieces; //Keep a list of the placed pieces so that they can be removed to redraw the gamestate
+
+    float widthHeightRatio;
 
 
     void resizeEvent(QResizeEvent *event);
