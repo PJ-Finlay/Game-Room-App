@@ -7,6 +7,7 @@ PieceBasedGameWidget::PieceBasedGameWidget(QWidget *parent) : GameWidget(parent)
     layout = new QVBoxLayout(this);
     this->setLayout(layout);
     gameState = "_________";
+    widthHeightRatio = 1;
     scene = new ClickableScene(this);
     view = new QGraphicsView(scene,this);
     layout->addWidget(view);
@@ -41,7 +42,22 @@ QList<Piece> PieceBasedGameWidget::getPlacedPieces() const
 void PieceBasedGameWidget::renderPieces()
 {
     int width = scene->width();
-    int height = scene->height();
+    int height = scene ->height();
+
+    layout->removeWidget(view);
+
+    scene->deleteLater();
+    view->deleteLater();
+
+    scene = new ClickableScene(this);
+    view = new QGraphicsView(scene,this);
+
+
+    layout->addWidget(view);
+
+    QObject::connect(scene,SIGNAL(clicked(int,int)),this,SLOT(sceneClicked(int,int)));
+    QGraphicsPixmapItem* backgroundItem = new QGraphicsPixmapItem(background.scaled(width,height,Qt::KeepAspectRatio));
+    scene->addItem(backgroundItem);
 
     for(int i = 0; i < placedPieces.size(); i++){
         Piece piece = placedPieces.at(i);
@@ -57,27 +73,24 @@ void PieceBasedGameWidget::renderPieces()
     }
 }
 
+void PieceBasedGameWidget::setWidthHeightRatio(float ratio)
+{
+    widthHeightRatio = ratio;
+}
+
+float PieceBasedGameWidget::getWidthHeightRatio()
+{
+    return widthHeightRatio;
+}
+
 void PieceBasedGameWidget::resizeEvent(QResizeEvent *event)
 {
-    //Reset the scene/view
-    layout->removeWidget(view);
-    delete scene;
-    delete view;
-    scene = new ClickableScene(this);
-    view = new QGraphicsView(scene,this);
-    layout->addWidget(view);
-
-    QObject::connect(scene,SIGNAL(clicked(int,int)),this,SLOT(sceneClicked(int,int)));
-
-    //Redraw the background
-    QGraphicsPixmapItem* backgroundItem = new QGraphicsPixmapItem(background.scaled(event->size().width() - 50,event->size().height() - 50,Qt::KeepAspectRatio));
-    scene->addItem(backgroundItem);
-
+    int height = event->size().height() - 30;
+    int width = height * widthHeightRatio;
+    scene->setSceneRect(0,0,width,height);
     //Redraw the pieces
     renderPieces();
 
-    //Show the view if it is not already visible
-    //view->show();
 }
 
 void PieceBasedGameWidget::sceneClicked(int x, int y)

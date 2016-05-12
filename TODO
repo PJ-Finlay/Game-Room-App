@@ -8,10 +8,12 @@ Consider Creating a superclass that would encompase all grid board games (Chess,
 Make CLI more powerful (undo, step through computer played game)
 Unify when it is printed when test failed
 Finish Hearts AI
+Look into using QObject::delteLater() instead of "delete qObject" 
 
 
 - Know Bugs -
 On Android it will not update the winner between games
+Piecebasedgamestate doesn't handle event->size vs scene->width as well as it should
 
 
 - Long Term TODO -
