@@ -9,6 +9,7 @@ Make CLI more powerful (undo, step through computer played game)
 Unify when it is printed when test failed
 Finish Hearts AI
 Look into using QObject::delteLater() instead of "delete qObject" 
+PieceBasedGameState shouldn't refresh the background when renderPieces is called which causes flickering
 
 
 - Know Bugs -

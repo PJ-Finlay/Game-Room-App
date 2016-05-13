@@ -14,11 +14,17 @@ void CheckersGameWidget::drawPiece(int x, int y, bool isRed, bool isKing)
 {
     //Get the path to the image to be placed
     QString imagePath = ":/images/individual_games/checkers/";
+    QString colorString = "Black";
     if(isRed){
-        imagePath += "Red.png";
-    }else{
-        imagePath += "Black.png";
+        colorString = "Red";
     }
+    imagePath += colorString;
+
+    if(isKing){
+        imagePath += "King";
+    }
+
+    imagePath += ".png";
 
     //Get the size and coordinates of the piece to place
     float xPos = ((float)x) / 8;

@@ -85,8 +85,13 @@ float PieceBasedGameWidget::getWidthHeightRatio()
 
 void PieceBasedGameWidget::resizeEvent(QResizeEvent *event)
 {
+
     int height = event->size().height() - 30;
     int width = height * widthHeightRatio;
+    if(width > event->size().width() - 30){
+        width = event->size().width() - 30;
+        height = width / widthHeightRatio;
+    }
     scene->setSceneRect(0,0,width,height);
     //Redraw the pieces
     renderPieces();
