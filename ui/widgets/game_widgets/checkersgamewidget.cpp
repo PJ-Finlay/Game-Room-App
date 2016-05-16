@@ -1,5 +1,7 @@
 #include "checkersgamewidget.h"
 
+#include "../../../gamestate/individual_game_states/checkersgamestate.h"
+
 CheckersGameWidget::CheckersGameWidget(QWidget* parent) : PieceBasedGameWidget(parent)
 {
     QPixmap background(":/images/individual_games/chess/Board.png");
@@ -50,9 +52,16 @@ void CheckersGameWidget::setGameState(QString gameState)
         if(gameState.mid(i,1).compare("r") == 0){
             drawPiece(i % 8, 7 - (i / 8),true,false);
         }
-        if(gameState.mid(i,1).compare("b") == 0){
+        else if(gameState.mid(i,1).compare("b") == 0){
             drawPiece(i % 8, 7 - (i / 8),false,false);
         }
+        else if(gameState.mid(i,1).compare("R") == 0){
+            drawPiece(i % 8, 7 - (i / 8),true,true);
+        }
+        else if(gameState.mid(i,1).compare("B") == 0){
+            drawPiece(i % 8, 7 - (i / 8),false,true);
+        }
+
     }
     this->renderPieces();
 }

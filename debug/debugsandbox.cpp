@@ -3,19 +3,37 @@
 #include <QDebug>
 #include "debug/unittests/testdirectory.h"
 #include "cli.h"
+#include <iostream>
+#include <string>
 
 //Temporary Includes
-#include "../ui/widgets/game_widgets/game_elements/general/piecebasedgamewidget.h"
+#include "../ui/widgets/game_widgets/checkersgamewidget.h"
+#include "../gamestate/individual_game_states/checkersgamestate.h"
+#include "../ui/widgets/game_widgets/tictactoegamewidget.h"
+#include "../gamestate/individual_game_states/tictactoegamestate.h"
+
+using namespace std;
+
 
 void DebugSandbox::test()
 {
-    PieceBasedGameWidget* w = new PieceBasedGameWidget();
-    QPixmap pixmap(":/images/individual_games/tic_tac_toe/Board.png");
-    w->setBackground(pixmap);
-    Piece p("id",pixmap,.33,.33,.33,0);
+    //CheckersGameState g;
+    TicTacToeGameState g;
+    g.initializeGame();
+    g.printGameState();
 
-    w->addPiece(p);
+    //CheckersGameWidget* w = new CheckersGameWidget;
+    TicTacToeGameWidget* w = new TicTacToeGameWidget;
+    w->setGameState(g.getGameState());
     w->show();
+
+    while(true){
+        w->setGameState(g.getGameState());
+        string input;
+        cin >> input;
+        //QString move = QString::fromStdString(string);
+       g.makeMove(QString::fromStdString(input));
+    }
 
 }
 
