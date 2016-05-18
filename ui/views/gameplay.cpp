@@ -4,6 +4,8 @@
 #include <QLabel>
 #include <QHBoxLayout>
 #include <QMessageBox>
+#include <QTime>
+#include <QCoreApplication>
 
 #include "../widgets/pushbuttonwithid.h"
 
@@ -118,7 +120,19 @@ void GamePlay::checkForComputerPlay()
 {
     int turn = gameState->getTurn();
     if(playerConfiguration.mid(turn - 1,1).compare("c") == 0 && gameState->findWinners() == -1){//If it is the computer's turn
+        //Take the current time to determine when to stop the pause
+        QTime endTime = QTime::currentTime().addMSecs( movePause );
+
+        //Get the computer's move
         QString computerMove = game->getComputerPlayer()->getMoveFromGameState(gameState->getGameState());
+
+        //Keep executing events until the endTime is reached
+        while( QTime::currentTime() < endTime )
+        {
+            QCoreApplication::processEvents( QEventLoop::AllEvents, 100 );
+        }
+
+        //Send the computer's move to the GameWidget
         moveEntered(computerMove);
     }
 }
