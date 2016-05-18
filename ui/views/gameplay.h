@@ -27,6 +27,8 @@ public:
     GamePlay(std::shared_ptr<Game> game, QWidget* parent);
 
 private:
+    static const int movePause = 1200; //The minimum time that the computer player will take to make its move
+
     std::shared_ptr<Game> game; //The game that is being played
     std::shared_ptr<GameState> gameState; //The gamestate that goes with the game that is being played
     GameWidget* gameWidget; //The GameWidget for the game that is being played

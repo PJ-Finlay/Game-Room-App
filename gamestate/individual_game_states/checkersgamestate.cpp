@@ -55,7 +55,6 @@ void CheckersGameState::updateGameState(QString move){
     //If a piece was captured
     if(abs(startX - endX) > 1){
         board[(startX+endX)/2][(startY+endY)/2] = '_'; //remove the jumped piece
-        qDebug() << (startX+endX)/2 << (startY+endY)/2;
         if(validCaptureMoves(endX,endY).size() > 0) incrementTurn();//deincrement the turn  because the player gets to go again
     }
 
