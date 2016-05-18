@@ -179,6 +179,18 @@ void GamePlay::moveEntered(QString move)
         gameWidget->makeMove(move);
         gameWidget->setGameState(gameState->getGameState());
         if(gameState->findWinners() != -1){
+            //Pause so that the player has time to view the board
+
+            //Take the current time to determine when to stop the pause
+            QTime endTime = QTime::currentTime().addMSecs( movePause );
+
+            //Keep executing events until the endTime is reached
+            while( QTime::currentTime() < endTime )
+            {
+                QCoreApplication::processEvents( QEventLoop::AllEvents, 100 );
+            }
+
+
             showGameOver();
             return;
         }
