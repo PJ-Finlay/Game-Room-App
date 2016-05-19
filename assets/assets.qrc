@@ -9,5 +9,6 @@
         <file>images/individual_games/checkers/Red.png</file>
         <file>images/individual_games/checkers/BlackKing.png</file>
         <file>images/individual_games/checkers/RedKing.png</file>
+        <file>images/individual_games/chess/HighlightSquare.png</file>
     </qresource>
 </RCC>

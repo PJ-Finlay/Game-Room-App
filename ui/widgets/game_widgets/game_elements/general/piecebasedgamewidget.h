@@ -14,7 +14,8 @@
 /**
  * @brief The PieceBasedGameWidget class provides a interface with a QGraphicsScene that is more useful for creating piece
  * based games than the normal QGraphicsScene methods. This class organizes the scene into pieces and then provides methods
- * to place and remove pieces.
+ * to place and remove pieces. Pieces are rendered in the order they are in on the list, so the piece in position 0 will be
+ * on the bottom, and the piece in position placedPieces.size()-1 will be on top
  */
 
 class PieceBasedGameWidget : public GameWidget
@@ -56,6 +57,19 @@ public:
      * @return The QList of QGraphicsItems
      */
     QList<Piece> getPlacedPieces() const;
+
+    /**
+     * @brief Inserts a piece at a given location and moves all of the other pieces further down in the list
+     * @param index The index where the piece will be inserted
+     * @param toInsert The piece to insert
+     */
+    void insert(int index, Piece toInsert);
+
+    /**
+     * @brief Removes a piece at a given index
+     * @param index The index of the piece to remove
+     */
+    void removeAt(int index);
 
     /**
      * @brief Re renders all of the pieces in the placed pieces list

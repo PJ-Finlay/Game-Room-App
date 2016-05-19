@@ -77,6 +77,14 @@ void CheckersGameWidget::squareClicked(double x, double y)
 
     if(!selectionMade){
         selectedSpace = move;
+
+        //Add a piece to highlight the selected square
+        QPixmap pixmap(":/images/individual_games/chess/HighlightSquare.png");
+        float xPos = ((float)squareX) / 8;
+        float yPos = .875 - (((float)squareY)/8);
+        Piece p("",pixmap,.125,.125,xPos,yPos);
+        this->insert(0,p); //Moves piece to first index so it is rendered before any of the pieces
+        this->renderPieces();
     }else{
         //Emit the moveEntered signal with the move that was made
         emit moveEntered(selectedSpace + move);
