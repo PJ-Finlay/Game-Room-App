@@ -39,6 +39,16 @@ QList<Piece> PieceBasedGameWidget::getPlacedPieces() const
     return placedPieces;
 }
 
+void PieceBasedGameWidget::insert(int index, Piece toInsert)
+{
+    placedPieces.insert(index,toInsert);
+}
+
+void PieceBasedGameWidget::removeAt(int index)
+{
+    placedPieces.removeAt(index);
+}
+
 void PieceBasedGameWidget::renderPieces()
 {
     int width = scene->width();

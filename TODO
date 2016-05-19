@@ -15,6 +15,7 @@ PieceBasedGameState shouldn't refresh the background when renderPieces is called
 - Know Bugs -
 On Android it will not update the winner between games
 Piecebasedgamestate doesn't handle event->size vs scene->width as well as it should
+CheckersGameState should force you to capture when you have the opportunity but it does not
 
 
 - Long Term TODO -
