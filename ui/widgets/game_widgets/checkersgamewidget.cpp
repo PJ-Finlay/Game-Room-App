@@ -88,6 +88,7 @@ void CheckersGameWidget::squareClicked(double x, double y)
     }else{
         //Emit the moveEntered signal with the move that was made
         emit moveEntered(selectedSpace + move);
+        this->setGameState(gameState);
         selectedSpace = "";
     }
     selectionMade = !selectionMade;
