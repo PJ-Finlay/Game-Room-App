@@ -90,7 +90,16 @@ HEADERS  += \
     ui/widgets/game_widgets/checkersgamewidget.h
 
 DISTFILES += \
-    ui/Reintegrating UI
+    ui/Reintegrating UI \
+    android/AndroidManifest.xml \
+    android/gradle/wrapper/gradle-wrapper.jar \
+    android/gradlew \
+    android/res/values/libs.xml \
+    android/build.gradle \
+    android/gradle/wrapper/gradle-wrapper.properties \
+    android/gradlew.bat
 
 RESOURCES += \
     assets/assets.qrc
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
